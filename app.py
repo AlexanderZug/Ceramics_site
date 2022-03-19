@@ -1,7 +1,6 @@
-import os
-
 from flask import Flask, render_template, url_for
 from person_data import TELEGRAM, WHATS_UP, VK_PAGE
+
 
 app = Flask(__name__)
 
