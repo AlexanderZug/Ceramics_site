@@ -22,15 +22,16 @@
           </a>
           <ul class="nav nav-pills">
             <li class="nav-item"><a href="/about" class="nav-link active" aria-current="page">About</a></li>
-            <li class="nav-item"><a href="/" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="/" class="nav-link">Online shop</a></li>
-            <li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href={{ telegram }} class="nav-link"><i class="bi bi-telegram"></i></a></li>
-              <li class="nav-item"><a href={{ whats_up }} class="nav-link"><i class="bi bi-whatsapp"></i></a></li>
-            <li class="nav-item"><a href={{ vk_page }} class="nav-link"><i class="fa fa-vk"></i></a></li>
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2">Projects</a></li>
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2">Online shop</a></li>
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2">Contact</a></li>
+            <li class="nav-item"><a href="{{ telegram }}" class="nav-link link-dark px-2"><i class="bi bi-telegram"></i></a></li>
+              <li class="nav-item"><a href="{{ whats_up }}" class="nav-link link-dark px-2"><i class="bi bi-whatsapp"></i></a></li>
+            <li class="nav-item"><a href="{{ vk_page }}" class="nav-link link-dark px-2"><i class="fa fa-vk"></i></a></li>
           </ul>
         </header>
       </div>
+
 
     {% block body %}{% endblock %}
 
@@ -44,12 +45,12 @@
         <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Projects</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Online shop</a></li>
         <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact</a></li>
+
       </ul>
     </div>
 </nav>
     </footer>
     </div>
 </div>
-
 </body>
 </html>
