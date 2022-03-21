@@ -5,5 +5,18 @@ Home
 {% endblock %}
 
 {% block body %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ url_for('static', filename='img/onion.jpg') }}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/corn.jpg') }}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
 
 {% endblock %}

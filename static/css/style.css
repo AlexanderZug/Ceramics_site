@@ -11,22 +11,24 @@ body {
 }
 
 .p-lst-about {
-	font-family: Trattatello, fantasy;
-	font-size:20px;
+	font-family: Luminari, fantasy;
+	font-size:18px;
 }
 
 .p-lst-footer {
-	margin: 15px 25px 35px 190px;
-	font-family: Bradley Hand, cursive;
-	font-size:20px;
+	margin: 5px 45px 55px 190px;
+	font-family: Luminari, fantasy;
+	font-size:18px;
+}
 
-
+.carousel {
+  width:640px;
+  height:460px;
 }
 
 .wrapper {
 	position: relative;
 	min-height: 80%;
-
 }
 
 .nav {
