@@ -12,7 +12,7 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
 if __name__ == '__main__':
