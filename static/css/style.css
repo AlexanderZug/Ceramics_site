@@ -15,6 +15,14 @@ body {
 	font-size:20px;
 }
 
+.p-lst-footer {
+	margin: 15px 25px 35px 190px;
+	font-family: Bradley Hand, cursive;
+	font-size:20px;
+
+
+}
+
 .wrapper {
 	position: relative;
 	min-height: 80%;
