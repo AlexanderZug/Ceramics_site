@@ -15,10 +15,15 @@ body {
 .wrapper {
 	position: relative;
 	min-height: 80%;
+	color: black;
+}
+
+.nav {
+	color: black;
 }
 
 .container {
-	padding-bottom: 40px;
+	padding-bottom: 10px;
 }
 
 .footer {
@@ -34,5 +39,10 @@ body {
 }
 
 .lst-block {
-	margin: 15px 125px 35px 45px;
+	margin: 15px 15px 15px 15px;
+}
+
+.img_padding {
+	float: right;
+	padding: 0 10px 10px 0;
 }
