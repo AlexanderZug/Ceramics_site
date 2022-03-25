@@ -152,12 +152,19 @@ body {
     font-size: 24px;
     color: #b1b1b1;
     padding-right: 46px;
+
 }
+
+.font-weight-bold {
+    font-family: Luminari, fantasy;
+}
+
+.container-contact {
+    margin-top: 13vh;
+}
+
 
 .contact_social_icons ul li a:hover{
-    color: #1ba974;
+    color: black;
 }
 
-.bg-light {
-    background-color: #f8f9fa!important;
-}
