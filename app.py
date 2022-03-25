@@ -15,5 +15,10 @@ def about():
     return render_template('about.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

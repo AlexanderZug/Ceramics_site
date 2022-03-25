@@ -41,6 +41,13 @@ body {
 
 }
 
+.text-muted mb-0 {
+    	position: fixed;
+	right: 0;
+	bottom: 13vh;
+    font-family: Luminari, fantasy;
+}
+
 .title-block {
 	margin: 55px 25px 35px 45px;
 	font-family: Luminari, fantasy;
@@ -138,4 +145,19 @@ body {
   width: 46vh;
   height: 46vh;
   background: white;
+}
+
+/**/
+.contact_social_icons ul li a {
+    font-size: 24px;
+    color: #b1b1b1;
+    padding-right: 46px;
+}
+
+.contact_social_icons ul li a:hover{
+    color: #1ba974;
+}
+
+.bg-light {
+    background-color: #f8f9fa!important;
 }
