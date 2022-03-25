@@ -5,29 +5,59 @@ Home
 {% endblock %}
 
 {% block body %}
+<div id="wrapper">
+      <div id="carousel">
+        <div id="content">
+          <img
+            class="item"
+            src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}"
+          />
+          <img
+            src="{{ url_for('static', filename='img/onion.jpg') }}"
+            class="item"
+          />
+          <img
+            src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}"
+            class="item"
+          />
+          <img
+            src="{{ url_for('static', filename='img/corn.jpg') }}"
+            class="item"
+          />
+          <img
+            src="{{ url_for('static', filename='img/pear.jpg') }}"
+            class="item"
+          />
+          <img
+            src="{{ url_for('static', filename='img/apple.jpg') }}"
+            class="item"
+          />
+        </div>
+      </div>
+      <button id="prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0V0z" />
+          <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+        </svg>
+      </button>
+      <button id="next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0V0z" />
+          <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+        </svg>
+      </button>
+    </div>
 
-<div class="slideshow-container">
-  <div class="mySlides fade">
-      <div class="filters-img">
-          <img src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}" style="width:40%"></div>
-  </div>
-
-  <div class="mySlides fade">
-      <div class="filters-img">
-          <img src="{{ url_for('static', filename='img/onion.jpg') }}" style="width:75%"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="filters-img">
-    <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" style="width:40%"></div>
-  </div>
-
-  <div class="mySlides fade">
-      <div class="filters-img">
-          <img src="{{ url_for('static', filename='img/corn.jpg') }}" style="width:55%"></div>
-  </div>
-</div>
-<br>
 
 <div class="points-fix">
     <a href="/about" class="points-fix">Go to the Shop</a>
