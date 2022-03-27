@@ -3,14 +3,21 @@
 * {
 	margin: 0;
 	padding: 0;
+    font-family: Luminari, fantasy;
 }
 
 html,
 body {
 	height: 100%;
 	background: -webkit-linear-gradient(90deg, #ffffff,#ffffff,#ffefba);
-	background: linear-gradient(90deg, #ffffff,#ffffff,#ffefba);
+	background: linear-gradient(90deg, #ffffff,#ffffff, #ffefba);
 }
+
+/*header, footer {*/
+/*    background: -webkit-linear-gradient(90deg, #ffefba, #ffffff,#ffffff,#ffefba);*/
+/*	background: linear-gradient(90deg, #ffefba,#ffffff,#ffffff);*/
+/*    padding: 0 20px;*/
+/*}*/
 
 a:hover, a:visited, a:link, a:active
 {
@@ -19,13 +26,11 @@ a:hover, a:visited, a:link, a:active
 }
 
 .p-lst-about {
-	font-family: Luminari, fantasy;
 	font-size:18px;
 }
 
 .p-lst-footer {
 	margin: 5px 45px 55px 190px;
-	font-family: Luminari, fantasy;
 	font-size:18px;
 }
 
@@ -36,29 +41,24 @@ a:hover, a:visited, a:link, a:active
 
 .nav {
 	color: black;
-    font-family: Luminari, fantasy;
 }
 
-.footer {
+footer {
 	position: fixed;
 	left: 0;
 	bottom: 13vh;
 	width: 100%;
 	height: 0;
-	font-family: Luminari, fantasy;
-
 }
 
 .text-muted mb-0 {
-    	position: fixed;
+    position: fixed;
 	right: 0;
 	bottom: 13vh;
-    font-family: Luminari, fantasy;
 }
 
 .title-block {
 	margin: 55px 25px 35px 45px;
-	font-family: Luminari, fantasy;
 	font-size: 20px;
 }
 
@@ -68,92 +68,93 @@ a:hover, a:visited, a:link, a:active
 	height: 400px
 }
 
-.img_padding {
-	float: right;
-	padding: 0 5px 10px 0;
-	/*filter: blur(5px);*/
-	opacity: 0.95;
-	border-radius: 40px 40px 40px 40px;
-}
 
+/*.carousel-item {*/
+/*  width: 400px;*/
+/*  height: 600px;*/
+/*  overflow: hidden;*/
+/*  margin: 50px;*/
+/*}*/
+
+/*.carousel-item img {*/
+/*  width: initial;*/
+/*  height: 100%;*/
+/*}*/
+
+/*.carousel-inner {*/
+/*display: flex;*/
+/*}*/
+
+/*.img-center {margin:0 auto;}*/
 
 .points-fix {
-    position: fixed;
-    bottom: 13vh;
-    right: 0;
-    left: 0;
-    text-align: center;
-    display: inline-block; /* Строчно-блочный элемент */
-    color: black; /* Белый цвет текста */
-    font-family: Luminari, fantasy;
+    width: 50%;
+    height: 5%;
+    display: flex; /* Строчно-блочный элемент */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 200px auto;
 	font-size: 20px;
     padding: 1rem 1rem; /* Поля вокруг текста */
     text-decoration: none; /* Убираем подчёркивание */
     border-radius: 3px;
 }
 
-#wrapper {
-  width: 100%;
-  max-width: 964px;
-  position: relative;
-  margin-left: 10%;
-  margin-right: 70%;
-  top: 10vh;
-  /*padding: 0 13vh;*/
-}
 
-#carousel {
-  overflow: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
 
-#carousel::-webkit-scrollbar {
-  height: 0;
-}
+/*#carousel {*/
+/*  overflow: auto;*/
+/*  scroll-behavior: smooth;*/
+/*  scrollbar-width: none;*/
+/*}*/
 
-#prev,
-#next {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+/*#carousel::-webkit-scrollbar {*/
+/*  height: 0;*/
+/*}*/
 
-  border: none;
-  padding: 8px;
-  border-radius: 50%;
-  outline: 0;
-  cursor: pointer;
-  position: absolute;
-}
+/*#prev,*/
+/*#next {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-content: center;*/
 
-#prev {
-  top: 50%;
-  left: -10%;
-  transform: translate(50%, -50%);
-  display: none;
-  background: #ffefba;
-}
+/*  border: none;*/
+/*  padding: 8px;*/
+/*  border-radius: 50%;*/
+/*  outline: 0;*/
+/*  cursor: pointer;*/
+/*  position: absolute;*/
+/*}*/
 
-#next {
-  top: 50%;
-  right: -10%;
-  transform: translate(-50%, -50%);
-    background: white;
-}
+/*#prev {*/
+/*  top: 50%;*/
+/*  left: -10%;*/
+/*  transform: translate(50%, -50%);*/
+/*  display: none;*/
+/*  background: #ffefba;*/
+/*}*/
 
-#content {
-  display: grid;
-  grid-gap: 20px;
-  grid-auto-flow: column;
-  margin: auto;
-  box-sizing: border-box;
-}
+/*#next {*/
+/*  top: 50%;*/
+/*  right: -10%;*/
+/*  transform: translate(-50%, -50%);*/
+/*    background: white;*/
+/*}*/
 
-.item {
-  width: 46vh;
-  height: 46vh;
-  background: white;
-}
+/*#content {*/
+/*  display: grid;*/
+/*  grid-gap: 20px;*/
+/*  grid-auto-flow: column;*/
+/*  margin: auto;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*.item {*/
+/*  width: 46vh;*/
+/*  height: 46vh;*/
+/*  background: white;*/
+/*}*/
 
 /**/
 .contact_social_icons ul li a {

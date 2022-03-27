@@ -24,7 +24,11 @@
                         <svg class="bi me-2" width="40" height="32">
                             <use xlink:href="#bootstrap"></use>
                         </svg>
-                        <p style="font-family: Luminari, fantasy; font-style: italic; font-weight: 700; color:black; font-size:200%">
+                        <p style="font-family:
+                        Luminari, fantasy;
+                        font-weight: 700;
+                        color:black;
+                        font-size:200%">
                             Svetlana Pokrovskaya</p>
                     </a>
                     <ul class="nav nav-pills">
@@ -51,24 +55,27 @@
 
 {% block body %}{% endblock %}
 
-<br>
 <footer>
-    <div class="footer">
-        <div class="container pt-4 ma-md-5 pt-md-5">
-            <div class="container d-flex flex-wrap">
-                <ul class="nav me-auto">
-                    <li class="nav-item"><a href="/" class="nav-link link-dark px-2" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="/about" class="nav-link link-dark px-2">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Projects</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Online shop</a></li>
-                    <li class="nav-item"><a href="/contact" class="nav-link link-dark px-2">Contact</a></li>
-                </ul>
-                <div>
-                    <p class="text-muted mb-0">© Copyright | AlexanderZug 2022 </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="footer">
+                    <div class="container pt-2 ma-md-2 pt-md-2">
+                        <div class="container d-flex flex-wrap">
+                            <ul class="nav me-auto">
+                                <li class="nav-item"><a href="/" class="nav-link link-dark px-2" aria-current="page">Home</a>
+                                </li>
+                                <li class="nav-item"><a href="/about" class="nav-link link-dark px-2">About</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Projects</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Online shop</a></li>
+                                <li class="nav-item"><a href="/contact" class="nav-link link-dark px-2">Contact</a></li>
+                            </ul>
+                            <div>
+                                <p class="text-muted mb-0">© Copyright | AlexanderZug 2022 </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
 </footer>
 {% block footer %}{% endblock %}
 

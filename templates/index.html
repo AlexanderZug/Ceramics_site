@@ -6,66 +6,46 @@
 {% block header %} {% endblock %}
 {% block body %}
     <div class="container">
-    <div class="row">
+{#    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">#}
     <div class="col-12">
-    <div id="wrapper">
-        <div id="carousel">
-            <div id="content">
-                <img
-                        class="item"
-                        src="{{ url_for('static', filename='img/girl.jpg') }}" class="img-thumbnail"
-                />
-                <img
-                        src="{{ url_for('static', filename='img/lockdown.jpg') }}"
-                        class="item"
-                />
-                <img
-                        src="{{ url_for('static', filename='img/fragments.jpg') }}"
-                        class="item"
-                />
-                <img
-                        src="{{ url_for('static', filename='img/not_holi.jpg') }}"
-                        class="item"
-                />
-                <img
-                        src="{{ url_for('static', filename='img/lockdown_two.jpg') }}"
-                        class="item"
-                />
-                <img
-                        src="{{ url_for('static', filename='img/fragments_two.jpg') }}"
-                        class="item"
-                />
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='img/girl.jpg') }}" class="rounded mx-auto d-block" alt="..." >
             </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/lockdown.jpg') }}" class="rounded mx-auto d-block" alt="..." >
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/fragments.jpg') }}" class="rounded mx-auto d-block" alt="..." >
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/not_holi.jpg') }}" class="rounded mx-auto d-block" alt="..." >
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}" class="rounded mx-auto d-block" alt="..." >
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='img/fragments_two.jpg') }}" class="rounded mx-auto d-block"     alt="..." >
+            </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+        <div class="points-fix">
+            <button type="button" class="btn btn-id btn-outline-light btn-lg">
+                <a href="/about">Go to the Shop</a></button>
         </div>
-        <button id="prev">
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-            >
-                <path fill="none" d="M0 0h24v24H0V0z"/>
-                <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/>
-            </svg>
-        </button>
-        <button id="next">
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-            >
-                <path fill="none" d="M0 0h24v24H0V0z"/>
-                <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"/>
-            </svg>
-        </button>
-    </div>
-
-
-    <div class="points-fix">
-    <button type="button" class="btn btn-outline-light btn-lg">
-        <a href="/about">Go to the Shop</a></button>
-    </div>
 
     <script src="static/js/index_page.js"></script>
     {% block footer %}{% endblock %}
