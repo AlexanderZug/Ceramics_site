@@ -4,7 +4,11 @@
 About
 {% endblock %}
 
+{% block header %} {% endblock %}
+
 {% block body %}
+    <div class="container">
+
     <div class="title-block">
     <h3>Светлана Покровская, художник </h3>
     <h4>Живу и работаю в Москве</h4>
@@ -23,6 +27,6 @@ About
     <li><p class="p-lst-about">2021-2022 гг. - учеба в «Свободных мастерских» в ММОМА.</p></li></ul></div>
 <br>
     <br>
-    <p class="p-lst-footer">Работаю над своими творческими проектами в керамике и живописи.</p>
-
+    <p class="p-lst-footer">Работаю над своими творческими проектами в керамике и живописи.</p> </div>
+{% block footer %}{% endblock %}
 {% endblock %}
