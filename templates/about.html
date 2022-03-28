@@ -1,32 +1,45 @@
 {% extends 'base.html' %}
 
 {% block title %}
-About
+    About
 {% endblock %}
 
 {% block header %} {% endblock %}
 
 {% block body %}
-    <div class="container">
-
-    <div class="title-block">
-    <h3>Светлана Покровская, художник </h3>
-    <h4>Живу и работаю в Москве</h4>
-    <img src="{{ url_for('static', filename='img/about_img.jpg') }}" alt="Фото Светы" class="img_padding">
-
-
-<div class="lst-block">
-<ul>
-    <li><p class="p-lst-about">2006-2012 гг. - учеба в Строгановской академии, отеделение керамики.</p></li>
-    <li><p class="p-lst-about">2014-2017 гг. - работа в керамической мастерской социально-реабилитационного центра,
-        колледж №21 в должности технолога-керамиста и педагога.</p></li>
-    <li><p class="p-lst-about">2016-2019 гг. - обучение графическому дизайну на курсах в HSE art and design school,
-        B&D, bangbangeducation, работа графическим дизайнером.</p></li>
-    <li><p class="p-lst-about">2019-настоящее время - работа в студии Ne Malevichi, преподавание лепки и керамики детям и взрослым, проведение лекций
-        и экскурсий по истории керамики.</p></li>
-    <li><p class="p-lst-about">2021-2022 гг. - учеба в «Свободных мастерских» в ММОМА.</p></li></ul></div>   </div>
-<br>
-    <br>
-    <p class="p-lst-footer">Работаю над своими творческими проектами в керамике и живописи.</p> </div>
-{% block footer %}{% endblock %}
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center mt-1">Светлана Покровская, художник </h3>
+                    <h4 class="text-center mb-4">Живу и работаю в Москве</h4>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7 col-sm-10">
+                    <h5>2006-2012 гг. - учеба в Строгановской академии, отделение керамики.</h5>
+                    <h5>2014-2017 гг. - работа в керамической мастерской социально-реабилитационного центра, колледж №21
+                        в должности
+                        технолога-керамиста и педагога.</h5>
+                    <h5>2016-2019 гг. - обучение графическому дизайну на курсах в HSE art and design school,B&D,
+                        bangbangeducation,
+                        работа графическим дизайнером.</h5>
+                    <h5>2019-настоящее время - работа в студии Ne Malevichi,
+                        преподавание
+                        лепки и
+                        керамики детям и взрослым, проведение лекций
+                        и экскурсий по истории керамики.</h5>
+                    <h5>2021-2022 гг. - учеба в «Свободных мастерских» в
+                        ММОМА.</h5>
+                </div>
+                <div class="col-lg-5 col-sm-2 mb-sm-5 mt-sm-5 text-center">
+                    <img src="{{ url_for('static', filename='img/about_img.jpg') }}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-sm-7">
+                    <h5>Работаю над своими творческими проектами в керамике и живописи.</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% block footer %}{% endblock %}
 {% endblock %}

@@ -1,8 +1,6 @@
 
 
 * {
-	margin: 0;
-	padding: 0;
     font-family: Luminari, fantasy;
 }
 
@@ -13,11 +11,9 @@ body {
 	background: linear-gradient(90deg, #ffffff,#ffffff, #ffefba);
 }
 
-/*header, footer {*/
-/*    background: -webkit-linear-gradient(90deg, #ffefba, #ffffff,#ffffff,#ffefba);*/
-/*	background: linear-gradient(90deg, #ffefba,#ffffff,#ffffff);*/
-/*    padding: 0 20px;*/
-/*}*/
+footer {
+    padding: 50px 0;
+}
 
 a:hover, a:visited, a:link, a:active
 {
@@ -29,10 +25,10 @@ a:hover, a:visited, a:link, a:active
 	font-size:18px;
 }
 
-.p-lst-footer {
-	margin: 5px 45px 55px 190px;
-	font-size:18px;
-}
+/*.p-lst-footer {*/
+/*	margin: 5px 45px 55px 190px;*/
+/*	font-size:18px;*/
+/*}*/
 
 .main-wrapper {
 	position: relative;
@@ -43,30 +39,30 @@ a:hover, a:visited, a:link, a:active
 	color: black;
 }
 
-footer {
-	position: fixed;
-	left: 0;
-	bottom: 13vh;
-	width: 100%;
-	height: 0;
-}
+/*footer {*/
+/*	position: fixed;*/
+/*	left: 0;*/
+/*	bottom: 13vh;*/
+/*	width: 100%;*/
+/*	height: 0;*/
+/*}*/
 
-.text-muted mb-0 {
-    position: fixed;
-	right: 0;
-	bottom: 13vh;
-}
+/*.text-muted mb-0 {*/
+/*    position: fixed;*/
+/*	right: 0;*/
+/*	bottom: 13vh;*/
+/*}*/
 
-.title-block {
-	margin: 55px 25px 35px 45px;
-	font-size: 20px;
-}
+/*.title-block {*/
+/*	margin: 55px 25px 35px 45px;*/
+/*	font-size: 20px;*/
+/*}*/
 
-.lst-block {
-	margin: 15px 15px 15px 5px;
-	width: 550px;
-	height: 400px
-}
+/*.lst-block {*/
+/*	margin: 15px 15px 15px 5px;*/
+/*	width: 550px;*/
+/*	height: 400px*/
+/*}*/
 
 
 /*.carousel-item {*/
@@ -87,19 +83,19 @@ footer {
 
 /*.img-center {margin:0 auto;}*/
 
-.points-fix {
-    width: 50%;
-    height: 5%;
-    display: flex; /* Строчно-блочный элемент */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 200px auto;
-	font-size: 20px;
-    padding: 1rem 1rem; /* Поля вокруг текста */
-    text-decoration: none; /* Убираем подчёркивание */
-    border-radius: 3px;
-}
+/*.points-fix {*/
+/*    width: 50%;*/
+/*    height: 5%;*/
+/*    display: flex; !* Строчно-блочный элемент *!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    cursor: pointer;*/
+/*    margin: 200px auto;*/
+/*	font-size: 20px;*/
+/*    padding: 1rem 1rem; !* Поля вокруг текста *!*/
+/*    text-decoration: none; !* Убираем подчёркивание *!*/
+/*    border-radius: 3px;*/
+/*}*/
 
 
 
@@ -156,6 +152,15 @@ footer {
 /*  background: white;*/
 /*}*/
 
+.about h5 {
+    padding: 15px;
+    border: 2px solid #b1b1b1;
+
+}
+
+.about img {
+    border-radius: 10px;
+}
 /**/
 .contact_social_icons ul li a {
     font-size: 24px;

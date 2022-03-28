@@ -6,46 +6,65 @@
 {% block header %} {% endblock %}
 {% block body %}
     <div class="container">
-{#    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">#}
-    <div class="col-12">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ url_for('static', filename='img/girl.jpg') }}" class="rounded mx-auto d-block" alt="..." >
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mt-5">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{{ url_for('static', filename='img/girl.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='img/lockdown.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='img/fragments.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='img/not_holi.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='img/fragments_two.jpg') }}"
+                                     class="rounded mx-auto d-block"
+                                     alt="...">
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleControls"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/lockdown.jpg') }}" class="rounded mx-auto d-block" alt="..." >
-            </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/fragments.jpg') }}" class="rounded mx-auto d-block" alt="..." >
-            </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/not_holi.jpg') }}" class="rounded mx-auto d-block" alt="..." >
-            </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}" class="rounded mx-auto d-block" alt="..." >
-            </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/fragments_two.jpg') }}" class="rounded mx-auto d-block"     alt="..." >
-            </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
-    </div>
-
+        </div>
         <div class="points-fix">
             <button type="button" class="btn btn-id btn-outline-light btn-lg">
                 <a href="/about">Go to the Shop</a></button>
         </div>
+    </div>
+
+
 
     <script src="static/js/index_page.js"></script>
     {% block footer %}{% endblock %}
