@@ -10,6 +10,23 @@ body {
 	background: -webkit-linear-gradient(90deg, #ffffff,#ffffff,#ffefba);
 	background: linear-gradient(90deg, #ffffff,#ffffff, #ffefba);
 }
+section {
+    padding: 100px 0;
+}
+
+.my-carousel {
+    padding: 0;
+}
+
+.my-carousel .carousel-item {
+    display: flex;
+    max-height: 500px;
+}
+
+.my-carousel .carousel-item img {
+    object-fit: cover;
+}
+
 
 footer {
     padding: 50px 0;
@@ -21,19 +38,19 @@ a:hover, a:visited, a:link, a:active
     color: black;
 }
 
-.p-lst-about {
-	font-size:18px;
-}
+/*.p-lst-about {*/
+/*	font-size:18px;*/
+/*}*/
 
 /*.p-lst-footer {*/
 /*	margin: 5px 45px 55px 190px;*/
 /*	font-size:18px;*/
 /*}*/
 
-.main-wrapper {
-	position: relative;
-	min-height: 80%;
-}
+/*.main-wrapper {*/
+/*	position: relative;*/
+/*	min-height: 80%;*/
+/*}*/
 
 .nav {
 	color: black;
