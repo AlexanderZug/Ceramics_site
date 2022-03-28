@@ -14,19 +14,21 @@ section {
     padding: 100px 0;
 }
 
-.my-carousel {
-    padding: 0;
-}
+/*.my-carousel {*/
+/*    padding: 0;*/
+/*}*/
 
-.my-carousel .carousel-item {
-    display: flex;
-    max-height: 500px;
-}
+/*.my-carousel .carousel-item {*/
+/*    max-height: 800px;*/
+/*}*/
 
 .my-carousel .carousel-item img {
     object-fit: cover;
 }
 
+.index img {
+    height: 600px;
+}
 
 footer {
     padding: 50px 0;
