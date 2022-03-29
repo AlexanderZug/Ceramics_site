@@ -1,37 +1,16 @@
+/*общие настройки*/
 
+:root {
+    --color1: #808080;
+    --color2: #D2B48C;
+}
 
 * {
     font-family: Luminari, fantasy;
 }
 
-html,
-body {
-	height: 100%;
-	background: -webkit-linear-gradient(90deg, #ffffff,#ffffff,#ffefba);
-	background: linear-gradient(90deg, #ffffff,#ffffff, #ffefba);
-}
 section {
-    padding: 100px 0;
-}
-
-/*.my-carousel {*/
-/*    padding: 0;*/
-/*}*/
-
-/*.my-carousel .carousel-item {*/
-/*    max-height: 800px;*/
-/*}*/
-
-.my-carousel .carousel-item img {
-    object-fit: cover;
-}
-
-.index img {
-    height: 600px;
-}
-
-footer {
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -40,147 +19,39 @@ a:hover, a:visited, a:link, a:active
     color: black;
 }
 
-/*.p-lst-about {*/
-/*	font-size:18px;*/
-/*}*/
-
-/*.p-lst-footer {*/
-/*	margin: 5px 45px 55px 190px;*/
-/*	font-size:18px;*/
-/*}*/
-
-/*.main-wrapper {*/
-/*	position: relative;*/
-/*	min-height: 80%;*/
-/*}*/
-
-.nav {
-	color: black;
+header, footer {
+    background: -webkit-linear-gradient(90deg, #91b2d5,#be9ba1);
+    background: linear-gradient(90deg, #91b2d5,#be9ba1);
 }
 
-/*footer {*/
-/*	position: fixed;*/
-/*	left: 0;*/
-/*	bottom: 13vh;*/
-/*	width: 100%;*/
-/*	height: 0;*/
-/*}*/
+.about {
+    background: var(--color1);
+}
 
-/*.text-muted mb-0 {*/
-/*    position: fixed;*/
-/*	right: 0;*/
-/*	bottom: 13vh;*/
-/*}*/
+.index, .contact {
+    background: var(--color2);
+}
+/*карусель*/
+.my-carousel .carousel-item img {
+    object-fit: cover;
+}
 
-/*.title-block {*/
-/*	margin: 55px 25px 35px 45px;*/
-/*	font-size: 20px;*/
-/*}*/
+.index img {
+    height: 600px;
+}
 
-/*.lst-block {*/
-/*	margin: 15px 15px 15px 5px;*/
-/*	width: 550px;*/
-/*	height: 400px*/
-/*}*/
-
-
-/*.carousel-item {*/
-/*  width: 400px;*/
-/*  height: 600px;*/
-/*  overflow: hidden;*/
-/*  margin: 50px;*/
-/*}*/
-
-/*.carousel-item img {*/
-/*  width: initial;*/
-/*  height: 100%;*/
-/*}*/
-
-/*.carousel-inner {*/
-/*display: flex;*/
-/*}*/
-
-/*.img-center {margin:0 auto;}*/
-
-/*.points-fix {*/
-/*    width: 50%;*/
-/*    height: 5%;*/
-/*    display: flex; !* Строчно-блочный элемент *!*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    cursor: pointer;*/
-/*    margin: 200px auto;*/
-/*	font-size: 20px;*/
-/*    padding: 1rem 1rem; !* Поля вокруг текста *!*/
-/*    text-decoration: none; !* Убираем подчёркивание *!*/
-/*    border-radius: 3px;*/
-/*}*/
-
-
-
-/*#carousel {*/
-/*  overflow: auto;*/
-/*  scroll-behavior: smooth;*/
-/*  scrollbar-width: none;*/
-/*}*/
-
-/*#carousel::-webkit-scrollbar {*/
-/*  height: 0;*/
-/*}*/
-
-/*#prev,*/
-/*#next {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-content: center;*/
-
-/*  border: none;*/
-/*  padding: 8px;*/
-/*  border-radius: 50%;*/
-/*  outline: 0;*/
-/*  cursor: pointer;*/
-/*  position: absolute;*/
-/*}*/
-
-/*#prev {*/
-/*  top: 50%;*/
-/*  left: -10%;*/
-/*  transform: translate(50%, -50%);*/
-/*  display: none;*/
-/*  background: #ffefba;*/
-/*}*/
-
-/*#next {*/
-/*  top: 50%;*/
-/*  right: -10%;*/
-/*  transform: translate(-50%, -50%);*/
-/*    background: white;*/
-/*}*/
-
-/*#content {*/
-/*  display: grid;*/
-/*  grid-gap: 20px;*/
-/*  grid-auto-flow: column;*/
-/*  margin: auto;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
-/*.item {*/
-/*  width: 46vh;*/
-/*  height: 46vh;*/
-/*  background: white;*/
-/*}*/
-
+/*о художнике*/
 .about h5 {
     padding: 15px;
-    border: 2px solid #b1b1b1;
+    border: 3px solid white;
 
 }
 
 .about img {
     border-radius: 10px;
 }
-/**/
+
+/*контакты*/
 .contact_social_icons ul li a {
     font-size: 24px;
     color: #b1b1b1;
@@ -188,14 +59,9 @@ a:hover, a:visited, a:link, a:active
 
 }
 
-.font-weight-bold {
-    font-family: Luminari, fantasy;
-}
-
 .container-contact {
     margin-top: 13vh;
 }
-
 
 .contact_social_icons ul li a:hover{
     color: black;

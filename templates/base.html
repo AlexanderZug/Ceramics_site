@@ -20,16 +20,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <div class="d-flex flex-wrap justify-content-center py-3 border-bottom">
                     <a href="/"
-                       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                       class="d-flex align-items-center mb-1 mb-md-0 me-md-auto text-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32">
                             <use xlink:href="#bootstrap"></use>
                         </svg>
-                        <p style="font-family:
-                        Luminari, fantasy;
-                        font-weight: 700;
-                        color:black;
+                        <p style="
                         font-size:200%">
                             Svetlana Pokrovskaya</p>
                     </a>
@@ -38,11 +35,11 @@
                         <li class="nav-item"><a href="/" class="nav-link link-dark px-2">Projects</a></li>
                         <li class="nav-item"><a href="/" class="nav-link link-dark px-2">Online shop</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link link-dark px-2">Contact</a></li>
-                        <li class="nav-item"><a href="{{ telegram }}" class="nav-link link-dark px-2"><i
+                        <li class="nav-item"><a href="{{ telegram }}" target="_blank" class="nav-link link-dark px-2"><i
                                 class="bi bi-telegram"></i></a></li>
-                        <li class="nav-item"><a href="{{ whats_up }}" class="nav-link link-dark px-2"><i
+                        <li class="nav-item"><a href="{{ whats_up }}" target="_blank" class="nav-link link-dark px-2"><i
                                 class="bi bi-whatsapp"></i></a></li>
-                        <li class="nav-item"><a href="{{ vk_page }}" class="nav-link link-dark px-2"><i
+                        <li class="nav-item"><a href="{{ vk_page }}" target="_blank" class="nav-link link-dark px-2"><i
                                 class="fa fa-vk"></i></a></li>
                     </ul>
                 </div>
@@ -79,7 +76,16 @@
             </button>
         </div>
     </div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mt-5">
+                    <button type="button" class="btn btn-id btn-outline-light btn-lg">
+                        <a href="/about">Go to the Shop</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 {#о художнике#}
@@ -108,7 +114,7 @@
                 <h5>2021-2022 гг. - учеба в «Свободных мастерских» в
                     ММОМА.</h5>
             </div>
-            <div class="col-lg-5 col-sm-2 mb-sm-5 mt-sm-5 text-center">
+            <div class="col-lg-5 col-sm-2 mb-sm-5 mt-sm-5 text-center mb-2">
                 <img src="{{ url_for('static', filename='img/about_img.jpg') }}" class="img-fluid">
             </div>
             <div class="col-lg-4 col-sm-7">
