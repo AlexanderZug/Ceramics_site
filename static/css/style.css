@@ -9,8 +9,19 @@
     font-family: Luminari, fantasy;
 }
 
-section {
-    padding: 80px 0;
+body {
+    font-size: 16px;
+    font-weight: 400;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about, .contact {
+    padding: 50px 0;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -19,10 +30,30 @@ a:hover, a:visited, a:link, a:active
     color: black;
 }
 
+/*header*/
 header, footer {
     background: -webkit-linear-gradient(90deg, #91b2d5,#be9ba1);
     background: linear-gradient(90deg, #91b2d5,#be9ba1);
 }
+
+header {
+    padding: 20px 0;
+}
+
+.top-menu li a::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+}
+
+.top-menu li a:hover::after {
+    transform: scale(1);
+}
+
 
 .about {
     background: var(--color1);
