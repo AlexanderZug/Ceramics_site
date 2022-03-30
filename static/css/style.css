@@ -27,7 +27,7 @@ img {
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
-    color: black;
+    color: black !important;
 }
 
 /*header*/
@@ -40,6 +40,9 @@ header {
     padding: 20px 0;
 }
 
+footer {
+    padding: 20px 0;
+}
 .top-menu li a::after {
     content: " ";
     display: block;
@@ -65,6 +68,7 @@ header {
 /*карусель*/
 .my-carousel .carousel-item img {
     object-fit: cover;
+    width: 100%;
 }
 
 .index img {
@@ -98,3 +102,11 @@ header {
     color: black;
 }
 
+
+/*footer*/
+
+footer {
+    padding: 30px 0;
+}
+
+/*footer*/
