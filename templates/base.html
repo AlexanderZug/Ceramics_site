@@ -32,7 +32,7 @@
                     <a class="nav-link" href="#">Projects</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Online shop</a>
+                    <a class="nav-link" href="#shop">Online shop</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#contact">Contact</a>
@@ -109,6 +109,39 @@
     </div>
 </section>
 
+{##}
+<section class="gallery min-vh-100" id="shop">
+    <div class="container-lg">
+                <div class="row">
+            <div class="col-12">
+                <h3 class="text-center pb-5">Online Shop </h3>
+            </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="gallery-item" alt="gallery">
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}" class="gallery-item"
+                     alt="gallery">
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/corn.jpg') }}" class="gallery-item" alt="gallery">
+            </div>
+
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/onion.jpg') }}" class="gallery-item" alt="gallery">
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" class="gallery-item"
+                     alt="gallery">
+            </div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="gallery-item" alt="gallery">
+            </div>
+        </div>
+    </div>
+</section>
 
 {#контакты#}
 <section class="contact" id="contact">
@@ -153,21 +186,22 @@
 {#футер#}
 <footer>
     <div class="container h5">
-        <div class="d-flex flex-wrap justify-content align-items-center px-1 my-1 mx-1">
-            <p class="col-md-4 mb-0 text-muted"><a href="https://github.com/AlexanderZug" target="_blank">© Copyright |
+        <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4">
+            <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
+                Copyright |
                 AlexanderZug 2022</a></p>
-            <div class="col-md-4 text-center mt-2">
+            <div class="col-xl-4 col-md-4 text-center mt-2">
                 <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
                         class="bi bi-telegram"></i></a>
                 <a href="{{ whats_up }}" target="_blank" class="btn btn-outline-light"><i
                         class="bi bi-whatsapp"></i></a>
                 <a href="{{ vk_page }}" target="_blank" class="btn btn-outline-light"><i class="fa fa-vk"></i></a>
             </div>
-            <ul class="nav col-md-4 justify-content">
-                <li class="nav-item"><a href="#top-header" class="nav-link px-1 text-dark">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link px-1 text-dark">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-1 text-dark">Projects</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-1 text-dark">Online shop</a></li>
+            <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10">
+                <li><a href="#top-header" class="nav-link px-1 text-dark">Home</a></li>
+                <li><a href="#about" class="nav-link px-1 text-dark">About</a></li>
+                <li><a href="#" class="nav-link px-1 text-dark">Projects</a></li>
+                <li><a href="#shop" class="nav-link px-1 text-dark">Online shop</a></li>
             </ul>
         </div>
     </div>
