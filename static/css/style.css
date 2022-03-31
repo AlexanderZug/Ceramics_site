@@ -101,6 +101,16 @@ footer {
     cursor: pointer;
 }
 
+.gallery img {
+    display: block;
+    width: 400px;
+    height: 400px !important;
+    margin: 0 auto;
+}
+
+#gallery-modal .modal-img {
+    width: 100%;
+}
 /*галерея-шоп*/
 
 /*контакты*/
