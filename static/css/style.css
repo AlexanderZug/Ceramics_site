@@ -62,7 +62,7 @@ footer {
     background: var(--color1);
 }
 
-.index, .contact {
+.index, .contact, .projects {
     background: var(--color2);
 }
 /*карусель*/
@@ -78,15 +78,24 @@ footer {
 /*о художнике*/
 .about h5 {
     padding: 15px;
-    border: 3px solid white;
-
 }
 
 .about img {
     border-radius: 10px;
 }
+/*проекты*/
 
-/*галерея-шоп*/
+
+/*проекты*/
+.projects {
+    padding: 80px 0;
+}
+
+.card {
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+/*проекты*/
 
 .gallery {
     padding: 80px 0;
@@ -97,7 +106,7 @@ footer {
     background-color: var(--color1);
     padding: 10px;
     width: 100%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
     cursor: pointer;
 }
 
@@ -118,8 +127,6 @@ footer {
     font-size: 24px;
     color: #b1b1b1;
     padding-right: 46px;
-
-
 }
 
 .container-contact {
@@ -129,7 +136,6 @@ footer {
 .contact_social_icons ul li a:hover{
     color: black;
 }
-
 
 /*footer*/
 
