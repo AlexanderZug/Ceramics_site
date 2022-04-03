@@ -59,7 +59,7 @@ footer {
 
 
 .about {
-    background: var(--color1);
+    background: white;
 }
 
 .index, .contact, .projects {
@@ -91,7 +91,12 @@ footer {
 
 .card {
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: all 0.3s;
     cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
 }
 /*проекты*/
 
@@ -104,14 +109,17 @@ footer {
     background-color: var(--color1);
     width: 100%;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: all 0.3s;
     cursor: pointer;
 }
 
+.gallery img:hover {
+    box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
+}
+
 .gallery img {
-    display: block;
     width: 400px;
     height: 400px !important;
-    margin: 0 auto;
 }
 
 #gallery-modal .modal-img {
@@ -120,21 +128,13 @@ footer {
 /*галерея-шоп*/
 
 /*контакты*/
-.contact_social_icons ul li a {
-    font-size: 24px;
-    color: #b1b1b1;
-    padding-right: 46px;
-}
 
-.container-contact {
-    margin-top: 13vh;
-}
+/*контакты*/
 
+/*footer*/
 .contact_social_icons ul li a:hover{
     color: black;
 }
-
-/*footer*/
 
 footer {
     padding: 30px 0;
