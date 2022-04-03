@@ -83,8 +83,6 @@ footer {
 .about img {
     border-radius: 10px;
 }
-/*проекты*/
-
 
 /*проекты*/
 .projects {
@@ -104,9 +102,8 @@ footer {
 .gallery img {
     max-width: 100%;
     background-color: var(--color1);
-    padding: 10px;
     width: 100%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
     cursor: pointer;
 }
 
