@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for
 from person_data import TELEGRAM, WHATS_UP, VK_PAGE
 
+
 app = Flask(__name__)
 
 
@@ -10,4 +11,6 @@ def base():
 
 
 if __name__ == '__main__':
+    from errors import *
+
     app.run(debug=True)
