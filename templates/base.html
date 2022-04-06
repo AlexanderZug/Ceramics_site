@@ -256,12 +256,30 @@
                                            class="btn btn-primary rounded-0 py-2 px-4">
                                     <span class="submitting"></span>
                                 </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 pt-4">
+                                            {% with messages = get_flashed_messages() %}
+                                                {% if messages %}
+                                                    {% for message in messages %}
+                                                        <div class="alert alert-warning alert-dismissible fade show"
+                                                             role="alert">
+                                                            <span> {{ message }} </span>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endwith %}
+                                    </div>
+                                </div>
                             </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
