@@ -1,0 +1,7 @@
+from person_data import DB_CONFIG
+
+
+class Config:
+    SECRET_KEY = 'eiwbi8839183y84iuqh39731hx'
+    SQLALCHEMY_DATABASE_URI = DB_CONFIG
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
