@@ -1,7 +1,7 @@
-from person_data import DB_CONFIG
+from person_data import DB_CONFIG, SECRET_KEY_FLASK
 
 
 class Config:
-    SECRET_KEY = 'eiwbi8839183y84iuqh39731hx'
+    SECRET_KEY = SECRET_KEY_FLASK
     SQLALCHEMY_DATABASE_URI = DB_CONFIG
     SQLALCHEMY_TRACK_MODIFICATIONS = True
