@@ -12,3 +12,5 @@ class Client(db.Model):
         self.name = name
         self.email = email
         self.message = message
+
+
