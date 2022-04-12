@@ -1,8 +1,9 @@
 from flask import Flask, request, flash, render_template
 from flask_sqlalchemy import SQLAlchemy
-from flask_mail import Mail, Message
+from flask_mail import Mail
 import re
 import models
+import mail_sender
 
 from config import Config
 from person_data import TELEGRAM, WHATS_UP, VK_PAGE
@@ -27,10 +28,7 @@ def base():
             client = models.Client(rec.get('name'), rec.get('email'), rec.get('message'))
             db.session.add(client)
             db.session.commit()
-            msg = Message("Message from site", recipients=['m1dian@yandex.ru'])
-            msg.body = (f"You got a new message from {rec.get('name')}, e-mail: {rec.get('email')} "
-                        f", message text: {rec.get('message')}")
-            mail.send(msg)
+            mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
     return render_template('base.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
