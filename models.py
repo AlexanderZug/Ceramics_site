@@ -2,6 +2,8 @@ from app import db
 
 
 class Client(db.Model):
+    """Class for sending data to the database."""
+
     __tablename__ = 'clients'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40))

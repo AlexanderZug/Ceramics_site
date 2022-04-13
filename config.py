@@ -2,6 +2,8 @@ from person_data import DB_CONFIG, SECRET_KEY_FLASK, EMAIL, PASSWORD
 
 
 class Config:
+    """Class with configurations."""
+
     SECRET_KEY = SECRET_KEY_FLASK
     SQLALCHEMY_DATABASE_URI = DB_CONFIG
     SQLALCHEMY_TRACK_MODIFICATIONS = True
