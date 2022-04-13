@@ -19,6 +19,12 @@ regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{
 
 @app.route('/', methods=['POST', 'GET'])
 def base():
+    """
+    When GET returns the main page.
+    When POST performs validation,
+    if the validation passes,
+    then writes the data to the database and sends an email.
+    """
     if request.method == 'POST':
         rec = request.form
         if len(rec.get('name')) < 2:

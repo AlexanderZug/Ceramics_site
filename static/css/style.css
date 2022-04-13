@@ -57,11 +57,6 @@ footer {
     transform: scale(1);
 }
 
-
-.about {
-    background: white;
-}
-
 .index, .contact, .projects {
     background: var(--color2);
 }
