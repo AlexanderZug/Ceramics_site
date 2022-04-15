@@ -18,7 +18,7 @@
     {{ toastr.message() }}
 </head>
 
-{#хидер#}
+{#header#}
 <header id="top-header">
     <nav class="navbar navbar-expand-sm navbar-light h4">
         <a class="navbar-brand mb-0 fs-1" href="#">Svetlana Pokrovskaya</a>
@@ -46,7 +46,8 @@
 </header>
 
 <body>
-{#первая страница с каруселью#}
+
+{#carousel#}
 <section class="index" id="home">
     <div class="container-fluid my-carousel ps-0 pe-0">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -75,7 +76,7 @@
     </div>
 </section>
 
-{#о художнике#}
+{#about#}
 <section class="about" id="about">
     <div class="container">
         <div class="row">
@@ -110,14 +111,13 @@
     </div>
 </section>
 
-
 {#projects#}
 <section class="projects" id="projects">
     <h3 class="text-center pb-5">Projects</h3>
     <div class="row row-cols-1 row-cols-md-2 g-4 mx-2">
         <div class="col">
             <div class="card">
-                <img src="{{ url_for('static', filename='img/spring_two.jpg') }}" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='img/spring_two.jpg') }}" class="card-img-top" alt="art">
                 <div class="card-body">
                     <h5 class="card-title text-center">Живопись</h5>
                     <p class="card-text text-muted">В живописи меня также волнуют темы сотояния человека, его ощущения и
@@ -138,13 +138,13 @@
                         Я пишу на оргалите, так как это жесткий и менее управляемый материал. И во время работы
                         создается ощущение работы на стене. Оргалит
                         как и стена не поддается воздействию кисти
-                        в отличие от холста на подрамнике.</p>
+                    в отличие от холста на подрамнике.</p>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card">
-                <img src="{{ url_for('static', filename='img/girl5.jpg') }}" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='img/girl5.jpg') }}" class="card-img-top" alt="cary">
                 <div class="card-body">
                     <h5 class="card-title text-center">Керамика</h5>
                     <p class="card-text text-muted">Основной медиум в моей работе - керамика.
@@ -166,7 +166,7 @@
                         своей недосказанностью и будто бы незавершенностью.
                         Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен, но
                         в то же время природа керамики хрупкая
-                        и уязвимая, как и сам человек.</p>
+                    и уязвимая, как и сам человек.</p>
                 </div>
             </div>
         </div>
@@ -225,7 +225,7 @@
     <script src="static/js/base.js"></script>
 </section>
 
-{#контакты#}
+{#contacts#}
 <section class="contact" id="contact">
     <div class="content">
         <div class="container shadow rounded p-5 bg-light">
@@ -265,7 +265,7 @@
     </div>
 </section>
 
-{#футер#}
+{#footer#}
 <footer>
     <div class="container h5">
         <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4">

@@ -93,6 +93,7 @@ footer {
 .card:hover {
     box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
 }
+
 /*проекты*/
 
 .gallery {
@@ -121,10 +122,6 @@ footer {
     width: 100%;
 }
 /*галерея-шоп*/
-
-/*контакты*/
-
-/*контакты*/
 
 /*footer*/
 .contact_social_icons ul li a:hover{
