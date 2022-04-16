@@ -10,7 +10,6 @@ from config import Config
 from person_data import TELEGRAM, WHATS_UP, VK_PAGE, PATH_TO_SENTRY_LOG
 from flask_toastr import Toastr
 
-
 app = Flask(__name__)
 sentry_sdk.init(
     dsn=PATH_TO_SENTRY_LOG,
@@ -45,6 +44,11 @@ def base():
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
     return render_template('base.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+
+
+@app.route('/arts')
+def projects():
+    return render_template('arts.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
 if __name__ == '__main__':
