@@ -24,4 +24,4 @@ Start programm:
 python 3 app.py
 ```
 
-> Technologies used in the project: Python3, Flask, SQLAlchemy, psycopg2-binary, sentry-sdk, HTML, Bootstrap, JawaScript.
+> Technologies used in the project: Python3, Flask, SQLAlchemy, psycopg2-binary, sentry-sdk, HTML, CSS, Bootstrap, JavaScript.
