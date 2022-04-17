@@ -1,8 +1,9 @@
-import app
-from flask_mail import Message
 from dataclasses import dataclass
 from typing import ClassVar
 
+from flask_mail import Message
+
+import app
 from person_data import TRY_EMAIL
 
 

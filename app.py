@@ -1,14 +1,16 @@
 import re
-import models
-import mail_sender
+
 import sentry_sdk
-from flask import Flask, request, flash, render_template
-from sentry_sdk.integrations.flask import FlaskIntegration
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, flash, render_template, request
 from flask_mail import Mail
-from config import Config
-from person_data import TELEGRAM, WHATS_UP, VK_PAGE, PATH_TO_SENTRY_LOG
+from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
+from sentry_sdk.integrations.flask import FlaskIntegration
+
+import mail_sender
+import models
+from config import Config
+from person_data import PATH_TO_SENTRY_LOG, TELEGRAM, VK_PAGE, WHATS_UP
 
 app = Flask(__name__)
 sentry_sdk.init(
