@@ -47,8 +47,13 @@ def base():
 
 
 @app.route('/arts')
-def projects():
+def arts():
     return render_template('arts.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+
+
+@app.route('/ceramics')
+def ceramics():
+    return render_template('ceramics.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
 if __name__ == '__main__':
