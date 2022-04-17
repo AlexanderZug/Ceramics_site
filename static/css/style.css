@@ -1,4 +1,4 @@
-/*общие настройки*/
+/*General settings*/
 
 :root {
     --color1: #808080;
@@ -40,9 +40,6 @@ header {
     padding: 20px 0;
 }
 
-footer {
-    padding: 20px 0;
-}
 .top-menu li a::after {
     content: " ";
     display: block;
@@ -60,7 +57,11 @@ footer {
 .index, .contact, .projects {
     background: var(--color2);
 }
-/*карусель*/
+
+/*header*/
+
+/*carousel*/
+
 .my-carousel .carousel-item img {
     object-fit: cover;
     width: 100%;
@@ -70,7 +71,10 @@ footer {
     height: 600px;
 }
 
-/*о художнике*/
+/*carousel*/
+
+/*about the artist*/
+
 .about h5 {
     padding: 15px;
 }
@@ -79,7 +83,9 @@ footer {
     border-radius: 10px;
 }
 
-/*проекты*/
+/*about the artist*/
+
+/*projects*/
 .projects {
     padding: 80px 0;
 }
@@ -94,9 +100,9 @@ footer {
     box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
 }
 
-/*проекты*/
+/*projects*/
 
-
+/*gallery*/
 .gallery {
     padding: 80px 0;
 }
@@ -122,9 +128,15 @@ footer {
 #gallery-modal .modal-img {
     width: 100%;
 }
-/*галерея-шоп*/
+
+/*gallery*/
 
 /*footer*/
+
+footer {
+    padding: 20px 0;
+}
+
 .contact_social_icons ul li a:hover{
     color: black;
 }

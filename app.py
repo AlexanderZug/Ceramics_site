@@ -46,13 +46,15 @@ def base():
     return render_template('base.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
-@app.route('/arts')
+@app.route('/arts', methods=['GET'])
 def arts():
+    """Route to painting page. Only GET."""
     return render_template('arts.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
-@app.route('/ceramics')
+@app.route('/ceramics', methods=['GET'])
 def ceramics():
+    """Route to ceramics page. Only GET."""
     return render_template('ceramics.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
 
 
