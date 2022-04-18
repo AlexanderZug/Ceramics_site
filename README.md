@@ -21,7 +21,7 @@ pip3 install -r requirements.txt
 
 Start programm:
 ```
-python 3 app.py
+python3 app.py
 ```
 
 > Technologies used in the project: Python3, Flask, SQLAlchemy, psycopg2-binary, sentry-sdk, HTML, CSS, Bootstrap, JavaScript.
