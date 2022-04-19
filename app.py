@@ -8,7 +8,7 @@ from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 import mail_sender
-import models
+# import models
 from config import Config
 from person_data import PATH_TO_SENTRY_LOG, TELEGRAM, VK_PAGE, WHATS_UP
 
@@ -62,5 +62,5 @@ def ceramics():
 
 if __name__ == '__main__':
     from errors import *
-
+    import models
     app.run(debug=True, host='0.0.0.0', port=5001)
