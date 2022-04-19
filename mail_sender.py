@@ -4,7 +4,6 @@ from typing import ClassVar
 from flask_mail import Message
 
 import app
-from person_data import TRY_EMAIL
 
 
 @dataclass
@@ -18,7 +17,7 @@ class Mail:
 
     def send_message(self) -> None:
         """Sending a message."""
-        self.MSG = Message("Message from site", recipients=[TRY_EMAIL])
+        self.MSG = Message("Message from site", recipients=['m1dian@yandex.ru'])
         self.MSG.body = (f"You got a new message from {self.name}, "
                          f"e-mail: {self.email} "
                          f", message text: {self.message}")

@@ -1,20 +1,19 @@
 import re
 
 import sentry_sdk
-from flask import Flask, flash, render_template, request
+from flask import Flask, flash, render_template, request, redirect
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
+import models
 import mail_sender
-# import models
 from config import Config
-from person_data import PATH_TO_SENTRY_LOG, TELEGRAM, VK_PAGE, WHATS_UP
 
 app = Flask(__name__)
 sentry_sdk.init(
-    dsn=PATH_TO_SENTRY_LOG,
+    dsn="https://2cee952aa4f245f786a29a41ac6183d8@o1204683.ingest.sentry.io/6346581",
     integrations=[FlaskIntegration()],
     traces_sample_rate=1.0
 )
@@ -41,23 +40,30 @@ def base():
             flash("Your e-mail isn't correct.", 'error')
         else:
             flash('Your message sent.', 'success')
-            client = models.Client(rec.get('name'), rec.get('email'), rec.get('message'))
+            client = models.Client(rec.get('name'), rec.get('email'), rec.get('message'), rec.get('date'))
             db.session.add(client)
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
-    return render_template('base.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+            return redirect('/')
+    return render_template('base.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
 
 
 @app.route('/arts', methods=['GET'])
 def arts():
     """Route to painting page. Only GET."""
-    return render_template('arts.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+    return render_template('arts.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
 
 
 @app.route('/ceramics', methods=['GET'])
 def ceramics():
     """Route to ceramics page. Only GET."""
-    return render_template('ceramics.html', telegram=TELEGRAM, whats_up=WHATS_UP, vk_page=VK_PAGE)
+    return render_template('ceramics.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
 
 
 if __name__ == '__main__':
