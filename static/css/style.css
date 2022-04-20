@@ -1,12 +1,12 @@
 /*General settings*/
 
 :root {
-    --color1: #808080;
-    --color2: #D2B48C;
+    --color1: white;
+    --color2: #efefef;
 }
 
 * {
-    font-family: Luminari, fantasy;
+    font-family: Helvetica;
 }
 
 body {
@@ -20,8 +20,12 @@ img {
     height: auto;
 }
 
-.about, .contact {
+.contact {
     padding: 50px 0;
+}
+
+.about {
+    padding: 30px 0;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -30,10 +34,17 @@ a:hover, a:visited, a:link, a:active
     color: black !important;
 }
 
+.about {
+    background-color: var(--color2);
+}
+
+.contact-color {
+    background-color: var(--color2);
+}
+
 /*header*/
 header, footer {
-    background: -webkit-linear-gradient(90deg, #91b2d5,#be9ba1);
-    background: linear-gradient(90deg, #91b2d5,#be9ba1);
+    background: linear-gradient(90deg, #71644E ,#D3BF9A);
 }
 
 header {
@@ -55,7 +66,7 @@ header {
 }
 
 .index, .contact, .projects {
-    background: var(--color2);
+    background: var(--color1);
 }
 
 /*header*/
@@ -79,45 +90,35 @@ header {
     padding: 15px;
 }
 
-.about img {
-    border-radius: 10px;
+.about img{
+    width: 200%;
+    height: auto;
 }
 
 /*about the artist*/
 
 /*projects*/
 .projects {
-    padding: 80px 0;
+    padding: 30px 0;
 }
 
 .card {
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    transition: all 0.3s;
     cursor: pointer;
-}
-
-.card:hover {
-    box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
 }
 
 /*projects*/
 
 /*gallery*/
+
 .gallery {
-    padding: 80px 0;
+    padding: 30px 0;
+    background-color: var(--color2);
 }
 
 .gallery img {
     max-width: 100%;
-    background-color: var(--color1);
     width: 100%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    transition: all 0.3s;
     cursor: pointer;
-}
-
-.gallery img:hover {
-    box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75);
 }
 
 .gallery img {
