@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -41,13 +41,12 @@
     </nav>
 </header>
 
-<section class="gallery min-vh-100 arts">
+<section class="arts">
     <div class="col-12">
         <h2 class="text-center pb-2">Живопись</h2>
-        <p class="card-text text-muted mx-5">В живописи меня также волнуют темы сотояния человека, его ощущения и
+        <p class="card-text text-muted mx-5 mb-4">В живописи меня волнуют темы соcтояния человека, его ощущения и
                             переживания. Работы - как своеобразные отпечатки-негативы эмоциональных состояний. Я
-                            физически
-                            проживаю свои чувства через свободное стекание красок по поверхности, они сплетаются
+                            физически проживаю свои чувства через свободное стекание красок по поверхности, они сплетаются
                             будто из нитей разных цветов, как плетется
                             ткань. Я делаю мазок краски, беря много растворителя и смотрю, как краска течет вниз по
                             шероховатой поверхности оргалита. И каждый раз она течет по-новому, немного меняя
@@ -62,77 +61,139 @@
                             Я пишу на оргалите, так как это жесткий и менее управляемый материал. И во время работы
                             создается ощущение работы на стене. Оргалит
                             как и стена не поддается воздействию кисти
-                            в отличие от холста на подрамнике.</p>
-        <h3 class="text-center">Неясность 143см*80см, оргалит, масло, 2019г.</h3>
-        <p class="text-muted mx-5">
-            Состояние неясности можно сравнить с тем, когда попал в сильный
-            туман: стоишь и ничего не видно,
-            все белесое. Из разных мест могут
-            доноситься звуки, но непонятно
-            откуда точно они. Хорошо, если появится свет, на который можно выйти. Но пока ты в тумане, ты будто
-            обездвижен. Цветовая гамма картины немного тусклая, туманная.
-            Есть более темное пятно в центре,
-            а все остальные цвета и оттенки
-            близки по тону, все перемешиваются, превращаясь в кашу,
-            в неясность.</p></div>
-    <div class="container-lg">
-        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img04.jpg') }}" class="gallery-item" alt="image1">
+            в отличие от холста на подрамнике.</p></div>
+    <div class="row row-cols-1 row-cols-md-2 g-4 mx-4">
+        <div class="col">
+            <div class="card">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='img/arts/img02.jpg') }}" class="card-img-top" alt="art">
+                </a>
             </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img02.jpg') }}" class="gallery-item" alt="image2">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img03.jpg') }}" class="gallery-item" alt="image3">
+            <div>
+                <h4 class="text-center mt-3">Проект "Неясность"</h4>
             </div>
         </div>
-    </div>
-
-    <div class="col-12 text-center py-3 my-4"><h3>Синее. Свобода 122*138 см. оргалит, масло, 2014г.</h3>
-        <p class="text-muted mx-5">
-            Полотно сделано под впечатлением от просмотра картины «Три цвета.
-            Синий» К. Кесьлевского о том, как женщина,
-            потеряв мужа и дочь
-            в автокатастрофе, переживает эту потерю. Кино
-            о постепенном принятии ситуации и через это возвращении к жизни.
-            Фильм стал толчком для
-            переосмысления своей жизни в тот момент.
-            Через живопись, через этот синий цвет, будто и я сама освободилась
-            от прошлого и старого во мне. Интересно, что
-            в фильме именно синий
-            взят как цвет «освобождения».</p></div>
-    <div class="container-lg">
-        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image4">
+        <div class="col">
+            <div class="card">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='img/arts/img06.jpg') }}" class="card-img-top" alt="cary">
+                </a>
             </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img06.jpg') }}" class="gallery-item" alt="image5">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image6">
+            <div>
+                <h4 class="text-center mt-2">Проект "Синее. Свобода"</h4>
             </div>
         </div>
     </div>
 </section>
 
-<section class="Modal-section">
-    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{ url_for('static', filename='img/arts/img01.jpg') }}" class="modal-img" alt="modal-img">
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="static/js/base.js"></script>
-</section>
+
+
+
+
+
+{#        <h3 class="text-center">Неясность 143см*80см, оргалит, масло, 2019г.</h3>#}
+{#        <h3 class="text-center mb-3">Неясность</h3>#}
+{#        <p class="text-muted mx-5">#}
+{#            Состояние неясности можно сравнить с тем, когда попал в сильный#}
+{#            туман: стоишь и ничего не видно,#}
+{#            все белесое. Из разных мест могут#}
+{#            доноситься звуки, но непонятно#}
+{#            откуда точно они. Хорошо, если появится свет, на который можно выйти. Но пока ты в тумане, ты будто#}
+{#            обездвижен. Цветовая гамма картины немного тусклая, туманная.#}
+{#            Есть более темное пятно в центре,#}
+{#            а все остальные цвета и оттенки#}
+{#            близки по тону, все перемешиваются, превращаясь в кашу,#}
+{#            в неясность.</p></div>#}
+{#        <div class="container-lg text-center">#}
+{#    <div class="row row-cols-1 row-cols-md-2 g-5 mx-5">#}
+{#        <div class="col">#}
+{#            <div class="card">#}
+{#                <a href="/">#}
+{#                    <img src="{{ url_for('static', filename='img/arts/img04.jpg') }}" class="card-img-top" alt="art">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div>#}
+{#                <h4 class="text-center mt-2">Неясность</h4>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col">#}
+{#            <div class="card">#}
+{#                <a href="/">#}
+{#                    <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="card-img-top" alt="cary">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div>#}
+{#                <h4 class="text-center mt-2">Синее. Свобода</h4>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#        <div class="row">#}
+{#            <div class="row row-cols-6 row-cols-sm-6 row-cols-md-6">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img04.jpg') }}" alt="image1">#}
+                {#            </div></div>#}
+{#                <div class="container-lg">#}
+{#        <div class="row">#}
+{#            <div class="row gy-4 row-cols-6 row-cols-sm-6 row-cols-md-10">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img04.jpg') }}" alt="image1">#}
+{#            </div></div>#}
+{#    <div class="container-lg">#}
+{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img04.jpg') }}" class="gallery-item" alt="image1">#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img02.jpg') }}" class="gallery-item" alt="image2">#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img03.jpg') }}" class="gallery-item" alt="image3">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{#    <div class="col-12 text-center py-3 my-4"><h3>Синее. Свобода 122*138 см. оргалит, масло, 2014г.</h3>#}
+{#        <p class="text-muted mx-5">#}
+{#            Полотно сделано под впечатлением от просмотра картины «Три цвета.#}
+{#            Синий» К. Кесьлевского о том, как женщина,#}
+{#            потеряв мужа и дочь#}
+{#            в автокатастрофе, переживает эту потерю. Кино#}
+{#            о постепенном принятии ситуации и через это возвращении к жизни.#}
+{#            Фильм стал толчком для#}
+{#            переосмысления своей жизни в тот момент.#}
+{#            Через живопись, через этот синий цвет, будто и я сама освободилась#}
+{#            от прошлого и старого во мне. Интересно, что#}
+{#            в фильме именно синий#}
+{#            взят как цвет «освобождения».</p></div>#}
+{#    <div class="container-lg">#}
+{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image4">#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img06.jpg') }}" class="gallery-item" alt="image5">#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image6">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<section class="Modal-section">#}
+{#    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-dialog-centered modal-lg">#}
+{#            <div class="modal-content">#}
+{#                <div class="modal-header">#}
+{#                    <h5 class="modal-title" id="exampleModalLabel"></h5>#}
+{#                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                    <img src="{{ url_for('static', filename='img/arts/img01.jpg') }}" class="modal-img" alt="modal-img">#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <script src="static/js/base.js"></script>#}
+
 
 <footer>
     <div class="container h5">

@@ -34,11 +34,7 @@ a:hover, a:visited, a:link, a:active
     color: black !important;
 }
 
-.about {
-    background-color: var(--color2);
-}
-
-.contact-color {
+.about, .contact-color {
     background-color: var(--color2);
 }
 
@@ -65,7 +61,7 @@ header {
     transform: scale(1);
 }
 
-.index, .contact, .projects {
+.index, .projects {
     background: var(--color1);
 }
 
@@ -87,19 +83,19 @@ header {
 /*about the artist*/
 
 .about h5 {
-    padding: 15px;
+    padding: 5px;
 }
 
 .about img{
     width: 200%;
-    height: auto;
+    height: 200%;
 }
 
 /*about the artist*/
 
 /*projects*/
 .projects {
-    padding: 30px 0;
+    padding: 30px 0 10px 0;
 }
 
 .card {
@@ -131,6 +127,17 @@ header {
 }
 
 /*gallery*/
+
+/*arts*/
+
+.arts {
+    padding: 30px 0
+}
+
+.arts img {
+    width: 100%;
+    height: 800px;
+}
 
 /*footer*/
 
