@@ -74,6 +74,22 @@ def unclear_project():
                            vk_page='https://vk.com/id3404775')
 
 
+@app.route('/blue', methods=['GET'])
+def blue_project():
+    """Route to painting page. Only GET."""
+    return render_template('blue_project.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
+@app.route('/spring', methods=['GET'])
+def spring():
+    """Route to painting page. Only GET."""
+    return render_template('spring_project.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
 if __name__ == '__main__':
     from errors import *
     import models
