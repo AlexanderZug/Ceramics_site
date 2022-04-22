@@ -66,7 +66,16 @@ def ceramics():
                            vk_page='https://vk.com/id3404775')
 
 
+@app.route('/unclear', methods=['GET'])
+def unclear_project():
+    """Route to painting page. Only GET."""
+    return render_template('unclear_priject.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
 if __name__ == '__main__':
     from errors import *
     import models
+
     app.run(debug=True, host='0.0.0.0', port=5001)
