@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Светлана Покровская, художник. Работаю над своими творческими проектами в керамике и живописи.">
+    <meta name="description"
+          content="Светлана Покровская, художник. Работаю над своими творческими проектами в керамике и живописи.">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,286 +18,234 @@
     {{ toastr.include_jquery() }}
     {{ toastr.include_toastr_css() }}
     {{ toastr.message() }}
-</head>
+  </head>
 
-{#header#}
-<header id="top-header">
-    <nav class="navbar navbar-expand-sm navbar-light h4">
-        <a class="navbar-brand mb-0 fs-1" href="/">Svetlana Pokrovskaya</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ms-auto top-menu">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#shop">Online shop</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+  {#header#}
+  <header id="top-header">
+    <nav class="navbar navbar-expand-sm navbar-light h4 fw-weight-bold">
+      <a class="navbar-brand mb-0 fs-1 ms-3" href="/">Светлана Покровская</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto top-menu me-2">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about">обо мне<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#projects">проекты</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#shop">магазин</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#contact">контакты</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
+  </header>
 
-<body>
-
-{#carousel#}
-<section class="index" id="home">
-    <div class="container-fluid my-carousel ps-0 pe-0">
+  <body>
+    {#carousel#}
+    <section class="index" id="home">
+      <div class="container-fluid my-carousel ps-0 pe-0">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='img/lockdown.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='img/lowlenes.jpg') }}" class="d-block w-100" alt="...">
-                </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}" class="d-block w-100" alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='img/lockdown.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ url_for('static', filename='img/lowlenes.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-{#about#}
-<section class="about" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-center mt-1 ">Светлана Покровская, художник </h3>
-                <h4 class="text-center mb-4">Живу и работаю в Москве</h4>
-            </div>
-        </div>
+    {#about#}
+    <section class="about" id="about">
+      <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 col-sm-6">
-                <h5>2006-2012 гг. - учеба в Строгановской академии, отделение керамики.</h5>
-                <h5>2014-2017 гг. - работа в керамической мастерской социально-реабилитационного центра, колледж №21
-                    в должности
-                    технолога-керамиста и педагога.</h5>
-                <h5>2016-2019 гг. - обучение графическому дизайну на курсах в HSE art and design school,B&D,
-                    bangbangeducation,
-                    работа графическим дизайнером.</h5>
-                <h5>2019-настоящее время - работа в студии Ne Malevichi,
-                    преподавание
-                    лепки и
-                    керамики детям и взрослым, проведение лекций
-                    и экскурсий по истории керамики.</h5>
-                <h5>2021-2022 гг. - учеба в «Свободных мастерских» в
-                    ММОМА.</h5>
-                <h5>Работаю над своими творческими проектами в керамике и живописи.</h5>
-            </div>
-            <div class="col-lg-6 col-sm-6 mb-sm-5 mt-sm-5 text-center mt-2 mb-5">
-                <img src="{{ url_for('static', filename='img/about_img.jpg') }}">
-            </div>
+          <div class="col-lg-6 col-sm-6">
+            <h5>Человек. Кто он? Какой?</h5>
+            <h5>Состояния, эмоции, переживания.</h5>
+            <h5>Основные темы художника.</h5>
+            <h3 class="fw-weight-bold pt-3">BIO</h3>
+            <h5 class="pb-3">Живу и работаю в Москве</h5>
+            <h5>• 2021-2022гг. — учеба в «Свободных мастерских» Московского Музея Современного Искусства.</h5>
+            <h5>• 2019-настоящее время — работа в студии Ne Malevichi, преподавание лепки и керамики детям и взрослым,
+              проведение лекций и экскурсий по истории керамики.</h5>
+            <h5>• 2016-2019 — обучение графическому дизайну на курсах в HSE art and design school, B&D,
+              bangbangeducation,
+              работа графическим дизайнером.</h5>
+            <h5>• 2014-2017гг. — работа в керамической мастерской.</h5>
+          </div>
+          <div class="col-lg-6 col-sm-6 mb-sm-5 mt-sm-5 text-center">
+            <img src="{{ url_for('static', filename='img/about_img.jpg') }}">
+          </div>
         </div>
-    </div>
-    <div class="text-center pb-5">
-        <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Curriculum vitae
-        </button>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header pt-3">
-                    <h5 class="modal-title " id="exampleModalLabel">Curriculum vitae</h5>
-                </div>
-                <div class="modal-body">
-                    <h6>• 2022г. групповая выставка студентов Свободных мастерских ММОМА
-                        с работой «Изоляция» в галерее Nazavod, Москва</h6>
-                    <h6>• 2021г. онлайн - Арт-резиденция Get Art Project по созданию проекта,
-                        Проект «Нецелостность»</h6>
-                    <h6>• 2020г. онлайн - Арт-резиденция Get Art Fit</h6>
-                    <h6>• 2019г. выставка керамики «Тень женщины», с работой «Автопортрет.
-                        Изменения», музей-заповедник «Царицыно», Москва</h6>
-                    <h6>• 2015г. Выставка графики в ХКЦ «Встреча» с серией акварелей «Русские каникулы»</h6>
-                    <h6>• 2012г. Выставка «Творческие среды», ЦДХ, с дипломным проектом
-                        «Пласты земли», керамика, мателличеcкая конструкция</h6>
-                    <h6>• 2012г. Статья в книге «Керамика будущего», Москва</h6>
-                    <h6>• 2011г. 30-я Молодежная выставка МСХ, секция прикладного искусства, керамика, работа
-                        «Лица»</h6>
-                    <h6>• 2011г. керамический, молодежный симпозиум в Опошне (Украина).
-                        Диплом за лучшее керамическое панно</h6>
-                    <h6>• 2010г. Выставка «Стекло и керамика на траве» в усадьбе Архангель-
-                        ское с работой «Чайник-трава», 2010г.</h6>
-                    <h6>• 2010г. участие в студенческом проекте-перфомансе по цветоведению
-                        с педагогом МГХПА им.С.Г.Строганова Юрием Сычевым в Гараже</h6>
-                    <h6>• 2009г. Выставка-конкурс “Летний пленэр”
-                        МГХПУ им. С.Г. Строганова, живопись, этюды, Москва</h6>
-                    <h6>• 2007г. Второй фестиваль-смотр “Зимние грезы”,
-                        Москва</h6>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
 
 
-{#projects#}
-<section class="projects" id="projects">
-    <h3 class="text-center pb-3">Projects</h3>
-    <div class="row row-cols-1 row-cols-md-2 g-4 mx-2">
+    {#projects#}
+    <section class="projects" id="projects">
+      <h3 class="text-center pb-3 fw-weight-bold fs-1">Проекты</h3>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mx-2">
         <div class="col">
-            <div class="card">
-                <a href="/arts">
-                    <img src="{{ url_for('static', filename='img/spring_two.jpg') }}" class="card-img-top" alt="art">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-2">Живопись</h4>
-            </div>
+          <div class="card">
+            <a href="/arts">
+              <img src="{{ url_for('static', filename='img/spring_two.jpg') }}" class="card-img-top" alt="art">
+            </a>
+          </div>
+          <div>
+            <p class="text-center fs-3 mt-2">Живопись</p>
+          </div>
         </div>
         <div class="col">
-            <div class="card">
-                <a href="/ceramics">
-                    <img src="{{ url_for('static', filename='img/girl5.jpg') }}" class="card-img-top" alt="cary">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-2">Керамика</h4>
-            </div>
+          <div class="card">
+            <a href="/ceramics">
+              <img src="{{ url_for('static', filename='img/girl5.jpg') }}" class="card-img-top" alt="cary">
+            </a>
+          </div>
+          <div>
+            <p class="text-center fs-3 mt-2">Керамика</p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-{#shop#}
-<section class="gallery min-vh-100" id="shop">
-    <div class="container-lg">
+    {#shop#}
+    <section class="gallery min-vh-100" id="shop">
+      <div class="container-lg">
         <div class="row">
-            <div class="col-12">
-                <h3 class="text-center pb-5">Online Shop </h3>
-            </div>
+          <div class="col-12">
+            <h3 class="text-center pb-5">Online Shop </h3>
+          </div>
         </div>
         <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="gallery-item" alt="gallery">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}" class="gallery-item"
-                     alt="gallery">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/corn.jpg') }}" class="gallery-item" alt="gallery">
-            </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="gallery-item" alt="gallery">
+          </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}" class="gallery-item"
+                 alt="gallery">
+          </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/corn.jpg') }}" class="gallery-item" alt="gallery">
+          </div>
 
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/onion.jpg') }}" class="gallery-item" alt="gallery">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" class="gallery-item"
-                     alt="gallery">
-            </div>
-            <div class="col">
-                <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="gallery-item" alt="gallery">
-            </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/onion.jpg') }}" class="gallery-item" alt="gallery">
+          </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" class="gallery-item"
+                 alt="gallery">
+          </div>
+          <div class="col">
+            <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="gallery-item" alt="gallery">
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-{#pop-up photo for shop#}
-<section class="Modal-section">
-    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {#pop-up photo for shop#}
+    <section class="Modal-section">
+      <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="modal-img" alt="modal-img">
-                </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="modal-img" alt="modal-img">
+            </div>
+          </div>
         </div>
-    </div>
-    <script src="static/js/base.js"></script>
-</section>
+      </div>
+      <script src="static/js/base.js"></script>
+    </section>
 
-{#contacts#}
-<section class="contact" id="contact">
-    <div class="content">
+    {#contacts#}
+    <section class="contact" id="contact">
+      <div class="content">
         <div class="container p-5 contact-color">
-            <div class="row align-items-stretch no-gutters contact-wrap ">
-                <div class="col-md-12">
-                    <div class="title-contact text-center pb-5"><h3>Contact Me</h3></div>
-                    <div class="form h-100">
-                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
-                            <div class="row">
-                                <div class="col-md-6 form-group mb-3">
-                                    <input type="text" class="form-control" name="name" id="name"
-                                           placeholder="Your name">
-                                </div>
-                                <div class="col-md-6 form-group mb-3">
-                                    <input type="text" class="form-control" name="email" id="email"
-                                           placeholder="Your email">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 form-group mb-4">
+          <div class="row align-items-stretch no-gutters contact-wrap ">
+            <div class="col-md-12">
+              <div class="title-contact text-center pb-5"><h3>Contact Me</h3></div>
+              <div class="form h-100">
+                <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                      <input type="text" class="form-control" name="name" id="name"
+                             placeholder="Your name">
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                      <input type="text" class="form-control" name="email" id="email"
+                             placeholder="Your email">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group mb-4">
                                     <textarea class="form-control" name="message" id="message" cols="30" rows="4"
                                               placeholder="Write your message"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 form-group">
-                                    <input type="submit" value="Send Message"
-                                           class="btn btn-primary rounded-0 py-2 px-4">
-                                    <span class="submitting"></span>
-                                </div>
-                            </div>
-                        </form>
                     </div>
-                </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="submit" value="Send Message"
+                             class="btn btn-primary rounded-0 py-2 px-4">
+                      <span class="submitting"></span>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-{#footer#}
-<footer>
-    <div class="container h5">
+    {#footer#}
+    <footer>
+      <div class="container h5">
         <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4">
-            <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
-                Copyright |
-                AlexanderZug 2022</a></p>
-            <div class="col-xl-4 col-md-4 text-center mt-2">
-                <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
-                        class="bi bi-telegram"></i></a>
-                <a href="{{ whats_up }}" target="_blank" class="btn btn-outline-light"><i
-                        class="bi bi-whatsapp"></i></a>
-                <a href="{{ vk_page }}" target="_blank" class="btn btn-outline-light"><i class="fa fa-vk"></i></a>
-            </div>
-            <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10">
-                <li><a href="#top-header" class="nav-link px-1 text-dark">Home</a></li>
-                <li><a href="#about" class="nav-link px-1 text-dark">About</a></li>
-                <li><a href="#projects" class="nav-link px-1 text-dark">Projects</a></li>
-                <li><a href="#shop" class="nav-link px-1 text-dark">Online shop</a></li>
-            </ul>
+          <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
+            Copyright |
+            AlexanderZug 2022</a></p>
+          <div class="col-xl-4 col-md-4 text-center mt-2">
+            <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
+                class="bi bi-telegram"></i></a>
+            <a href="{{ whats_up }}" target="_blank" class="btn btn-outline-light"><i
+                class="bi bi-whatsapp"></i></a>
+            <a href="{{ vk_page }}" target="_blank" class="btn btn-outline-light"><i class="fa fa-vk"></i></a>
+          </div>
+          <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10">
+            <li><a href="#top-header" class="nav-link px-1 text-dark">Home</a></li>
+            <li><a href="#about" class="nav-link px-1 text-dark">About</a></li>
+            <li><a href="#projects" class="nav-link px-1 text-dark">Projects</a></li>
+            <li><a href="#shop" class="nav-link px-1 text-dark">Online shop</a></li>
+          </ul>
         </div>
-    </div>
-</footer>
-<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-{{ toastr.include_toastr_js() }}
-</body>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    {{ toastr.include_toastr_js() }}
+  </body>
 </html>
