@@ -23,7 +23,7 @@
   {#header#}
   <header id="top-header">
     <nav class="navbar navbar-expand-sm navbar-light h4 fw-weight-bold">
-      <a class="navbar-brand mb-0 fs-1 ms-3" href="/">Светлана Покровская</a>
+      <a class="navbar-brand mb-0 fs-1 ms-3" href="/"><strong>Светлана Покровская</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -54,13 +54,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ url_for('static', filename='img/lockdown_two.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='img/new_img/img16.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{{ url_for('static', filename='img/lockdown.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='img/new_img/img15.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{{ url_for('static', filename='img/lowlenes.jpg') }}" class="d-block w-100" alt="...">
+              <img src="{{ url_for('static', filename='img/new_img/img03.jpg') }}" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -78,14 +78,14 @@
     </section>
 
     {#about#}
-    <section class="about" id="about">
+    <section class="about mt-4 mb-4" id="about">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-6 col-sm-12">
             <h5>Человек. Кто он? Какой?</h5>
             <h5>Состояния, эмоции, переживания.</h5>
             <h5>Основные темы художника.</h5>
-            <h3 class="fw-weight-bold pt-3">BIO</h3>
+            <h3 class="fw-weight-bold pt-4"><strong>BIO</strong></h3>
             <h5 class="pb-3">Живу и работаю в Москве</h5>
             <h5>• 2021-2022гг. — учеба в «Свободных мастерских» Московского Музея Современного Искусства.</h5>
             <h5>• 2019-настоящее время — работа в студии Ne Malevichi, преподавание лепки и керамики детям и взрослым,
@@ -95,8 +95,8 @@
               работа графическим дизайнером.</h5>
             <h5>• 2014-2017гг. — работа в керамической мастерской.</h5>
           </div>
-          <div class="col-lg-6 col-sm-6 mb-sm-5 mt-sm-5 text-center">
-            <img src="{{ url_for('static', filename='img/about_img.jpg') }}">
+          <div class="col-lg-6 col-sm-12 mb-sm-5 mt-sm-5 text-center mt-2">
+            <img src="{{ url_for('static', filename='img/about_img.jpg') }}" class="img-fluid">
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
 
     {#projects#}
     <section class="projects" id="projects">
-      <h3 class="text-center pb-3 fw-weight-bold fs-1">Проекты</h3>
+      <h3 class="text-center pb-3 fw-weight-bold fs-1"><strong>Проекты</strong></h3>
       <div class="row row-cols-1 row-cols-md-2 g-4 mx-2">
         <div class="col">
           <div class="card">
@@ -131,34 +131,22 @@
     </section>
 
     {#shop#}
-    <section class="gallery min-vh-100" id="shop">
-      <div class="container-lg">
-        <div class="row">
-          <div class="col-12">
-            <h3 class="text-center pb-5">Online Shop </h3>
+    <section class="shop" id="shop">
+      <h3 class="text-center fw-weight-bold fs-1"><strong>Магазин</strong></h3>
+      <h4 class="text-center pb-3">Графика</h4>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mx-2">
+        <div class="col">
+          <div class="card">
+            <a href="/arts">
+              <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="card-img-top" alt="art">
+            </a>
           </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/apple.jpg') }}" class="gallery-item" alt="gallery">
-          </div>
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/forget_me_nots.jpg') }}" class="gallery-item"
-                 alt="gallery">
-          </div>
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/corn.jpg') }}" class="gallery-item" alt="gallery">
-          </div>
-
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/onion.jpg') }}" class="gallery-item" alt="gallery">
-          </div>
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" class="gallery-item"
-                 alt="gallery">
-          </div>
-          <div class="col">
-            <img src="{{ url_for('static', filename='img/pear.jpg') }}" class="gallery-item" alt="gallery">
+        <div class="col">
+          <div class="card">
+            <a href="/ceramics">
+              <img src="{{ url_for('static', filename='img/luk_two.jpg') }}" class="card-img-top" alt="cary">
+            </a>
           </div>
         </div>
       </div>
@@ -188,28 +176,28 @@
         <div class="container p-5 contact-color">
           <div class="row align-items-stretch no-gutters contact-wrap ">
             <div class="col-md-12">
-              <div class="title-contact text-center pb-5"><h3>Contact Me</h3></div>
+              <div class="title-contact text-center pb-5"><h3>Связаться со мной</h3></div>
               <div class="form h-100">
                 <form class="mb-5" method="post" id="contactForm" name="contactForm">
                   <div class="row">
                     <div class="col-md-6 form-group mb-3">
                       <input type="text" class="form-control" name="name" id="name"
-                             placeholder="Your name">
+                             placeholder="Ваше имя">
                     </div>
                     <div class="col-md-6 form-group mb-3">
                       <input type="text" class="form-control" name="email" id="email"
-                             placeholder="Your email">
+                             placeholder="Ваш email">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group mb-4">
                                     <textarea class="form-control" name="message" id="message" cols="30" rows="4"
-                                              placeholder="Write your message"></textarea>
+                                              placeholder="Ваше сообщение"></textarea>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <input type="submit" value="Send Message"
+                      <input type="submit" value="Отправить сообщение"
                              class="btn btn-primary rounded-0 py-2 px-4">
                       <span class="submitting"></span>
                     </div>
@@ -238,9 +226,9 @@
           </div>
           <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10">
             <li><a href="#top-header" class="nav-link px-1 text-dark">Home</a></li>
-            <li><a href="#about" class="nav-link px-1 text-dark">About</a></li>
-            <li><a href="#projects" class="nav-link px-1 text-dark">Projects</a></li>
-            <li><a href="#shop" class="nav-link px-1 text-dark">Online shop</a></li>
+            <li><a href="#about" class="nav-link px-1 text-dark">обо мне</a></li>
+            <li><a href="#projects" class="nav-link px-1 text-dark">проекты</a></li>
+            <li><a href="#shop" class="nav-link px-1 text-dark">магазин</a></li>
           </ul>
         </div>
       </div>

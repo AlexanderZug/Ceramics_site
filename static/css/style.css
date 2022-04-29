@@ -82,10 +82,6 @@ header {
 
 /*about the artist*/
 
-.about {
-    padding: 100px;
-}
-
 .about img{
     width: 200%;
     height: 200%;
@@ -96,6 +92,11 @@ header {
 /*projects*/
 .projects {
     padding: 30px 0 10px 0;
+}
+
+.projects img {
+    height: 100%;
+    width: 100%;
 }
 
 .projects p {
@@ -130,6 +131,18 @@ header {
 }
 
 /*gallery*/
+
+/*shop*/
+
+.shop {
+    padding: 30px 0 60px 0;
+}
+.shop img {
+    height: 100%;
+    width: 100%;
+}
+
+/*shop*/
 
 /*arts*/
 
