@@ -2,69 +2,74 @@
 {% block title %} Керамика {% endblock %}
 {% block body %}
   <section class="arts">
-    <div class="col-12">
-      <h2 class="text-center pb-2">Керамика</h2>
-      <p class="card-text text-muted mx-5 mb-4">Основной медиум в моей работе — керамика.
-        Этот материал привлекает своей трехмерностью,
-        объемом, игрой внешнего и внутреннего пространств.
-        Мне интересен человек, его эмоции, нюансы
-        состояний и ощущений. В своих работах я создаю
-        будто бы внешнюю оболочку человека из глины,
-        развивая тему эмоций через этот образ.
-        Сами работы могут напоминать археологические раскопки: когда изделие (или останки человека)
-        собирают из отдельных частей в единое
-        целое, как и сам человек может быть нецелен и
-        оторван от себя.
-        Визуально меня вдохновляет искусство Древней Греции со своим стремлением к созданию
-        образа идеального человека. В этом антропоцентричном искусстве, человек целен и духовно
-        и телесно. Однако, дошедшие до нас артефакты
-        сохранились частями, скульптурные композиции
-        богов и людей разбиты, расколоты. А ведь именно частичность их искусства так привлекательна
-        своей недосказанностью и будто бы незавершенностью.
-        Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен,
-        но в то же время природа керамики хрупкая
-        и уязвимая, как и сам человек.</p></div>
-    <div class="row g-4 mx-4 my-3">
-      <div class="col-lg-3 col-md-2 ">
-        <div class="card">
-          <a href="/spring">
-            <img src="{{ url_for('static', filename='img/ceramics/image09.jpg') }}" class="img-fluid" alt="art">
-          </a>
+    <div class="container">
+      <div class="col-12">
+        <h2 class="text-center pb-2">Керамика</h2>
+        <p class="card-text text-muted mb-4">Основной медиум в моей работе — керамика.
+          Этот материал привлекает своей трехмерностью,
+          объемом, игрой внешнего и внутреннего пространств.
+          Мне интересен человек, его эмоции, нюансы
+          состояний и ощущений. В своих работах я создаю
+          будто бы внешнюю оболочку человека из глины,
+          развивая тему эмоций через этот образ.
+          Сами работы могут напоминать археологические раскопки: когда изделие (или останки человека)
+          собирают из отдельных частей в единое
+          целое, как и сам человек может быть нецелен и
+          оторван от себя.
+          Визуально меня вдохновляет искусство Древней Греции со своим стремлением к созданию
+          образа идеального человека. В этом антропоцентричном искусстве, человек целен и духовно
+          и телесно. Однако, дошедшие до нас артефакты
+          сохранились частями, скульптурные композиции
+          богов и людей разбиты, расколоты. А ведь именно частичность их искусства так привлекательна
+          своей недосказанностью и будто бы незавершенностью.
+          Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен,
+          но в то же время природа керамики хрупкая
+          и уязвимая, как и сам человек.</p></div>
+      <section class="projects-item" id="projects-item">
+        <div class="row row-cols-1 row-cols-md-2 gx-4 gy-4">
+          <div class="col">
+            <div class="card">
+              <a href="/arts">
+                <img src="{{ url_for('static', filename='img/new_img/img03.jpg') }}" class="card-img-top" alt="art">
+              </a>
+            </div>
+            <div>
+              <p class="text-center fs-3">Проект «Автопортрет. Изменения»</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <a href="/ceramics">
+                <img src="{{ url_for('static', filename='img/new_img/img05.jpg') }}" class="card-img-top" alt="cary">
+              </a>
+            </div>
+            <div>
+              <p class="text-center fs-3">Проект «Изоляция»</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 class="text-center mt-3">Проект «Автопортрет. Изменения»</h4>
+        <div class="row row-cols-1 row-cols-md-2 gx-4 gy-4">
+          <div class="col">
+            <div class="card">
+              <a href="/arts">
+                <img src="{{ url_for('static', filename='img/new_img/img15.jpg') }}" class="card-img-top" alt="art">
+              </a>
+            </div>
+            <div>
+              <p class="text-center fs-3">Проект «Нецелостность»</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <a href="/ceramics">
+                <img src="{{ url_for('static', filename='img/new_img/img10.jpg') }}" class="card-img-top" alt="cary">
+              </a>
+            </div>
+            <div>
+              <p class="text-center fs-3">Проект «Одиночество»</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-2 ">
-        <div class="card">
-          <a href="/unclear">
-            <img src="{{ url_for('static', filename='img/ceramics/image03.jpg') }}" class="img-fluid" alt="cary">
-          </a>
-        </div>
-        <div>
-          <h4 class="text-center mt-2">Проект «Изоляция»</h4>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-2 ">
-        <div class="card">
-          <a href="/blue">
-            <img src="{{ url_for('static', filename='img/ceramics/image12.jpg') }}" class="img-fluid" alt="cary">
-          </a>
-        </div>
-        <div>
-          <h4 class="text-center mt-2">Проект «Нецелостность»</h4>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-2">
-        <div class="card">
-          <a href="/blue">
-            <img src="{{ url_for('static', filename='img/ceramics/image08.jpg') }}" class="img-fluid" alt="cary">
-          </a>
-        </div>
-        <div>
-          <h4 class="text-center mt-2">Проект «Одиночество»</h4>
-        </div>
-      </div>
     </div>
   </section>
 {% endblock %}
