@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} Синее.Свобода {% endblock %}
+{% block title %} Графика {% endblock %}
 {% block body %}
-  <section class="gallery min-vh-100">
-    <div class="col-12 text-center py-3 my-4"><h3>«Синее.Свобода»</h3>
-      <h4 class="text-center pb-3">122*138 см. оргалит, масло, 2014 г.</h4></div>
+  <section class="gallery min-vh-100 graphic">
+    <div class="col-12 text-center py-3 my-4"><h3>Графика</h3></div>
     <div class="container gx-4">
-      <div class="text-muted pt-3 pb-5">
+      <div class="text-muted pt-2 pb-5">
         Полотно сделано под впечатлением от просмотра картины «Три цвета.
         Синий» К. Кесьлевского о том, как женщина,
         потеряв мужа и дочь
@@ -19,16 +18,25 @@
         взят как цвет «освобождения».
       </div>
     </div>
-    <div class="container-lg mt-4">
+    <div class="container-lg mt-2">
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
         <div class="col">
-          <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image4">
+          <img src="{{ url_for('static', filename='img/new_img/img27.jpg') }}" class="gallery-item" alt="image4">
         </div>
         <div class="col">
-          <img src="{{ url_for('static', filename='img/arts/img06.jpg') }}" class="gallery-item" alt="image5">
+          <img src="{{ url_for('static', filename='img/new_img/img28.jpg') }}" class="gallery-item" alt="image5">
         </div>
         <div class="col">
-          <img src="{{ url_for('static', filename='img/arts/img05.jpg') }}" class="gallery-item" alt="image6">
+          <img src="{{ url_for('static', filename='img/new_img/img29.jpg') }}" class="gallery-item" alt="image6">
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/new_img/img30.jpg') }}" class="gallery-item" alt="image6">
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/new_img/img32.jpg') }}" class="gallery-item" alt="image6">
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/dried_flower_red.jpg') }}" class="gallery-item" alt="image6">
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{
 
 
 @app.route('/', methods=['POST', 'GET'])
-def base():
+def index():
     """
     When GET returns the main page.
     When POST performs validation,
@@ -45,7 +45,7 @@ def base():
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
             return redirect('/')
-    return render_template('base.html', telegram='https://t.me/sveta_pokrovskaya',
+    return render_template('index.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
 
@@ -88,6 +88,24 @@ def spring():
     return render_template('spring_project.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
+
+
+@app.route('/fear', methods=['GET'])
+def fear():
+    """Route to painting page. Only GET."""
+    return render_template('fear.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
+@app.route('/graphic', methods=['GET'])
+def graphic():
+    """Route to painting page. Only GET."""
+    return render_template('graphic.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
 
 
 if __name__ == '__main__':

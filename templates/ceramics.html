@@ -1,293 +1,70 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <script src="https://use.fontawesome.com/b1c567cb10.js"></script>
-    <title>Projects</title>
-</head>
-<body>
-  <header id="top-header">
-    <nav class="navbar navbar-expand-sm navbar-light h4 fw-weight-bold">
-      <a class="navbar-brand mb-0 fs-1 ms-3" href="/">Светлана Покровская</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto top-menu me-2">
-          <li class="nav-item active">
-            <a class="nav-link" href="#about">обо мне<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#projects">проекты</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#shop">магазин</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#contact">контакты</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-<section class="arts">
+{% extends 'base.html' %}
+{% block title %} Керамика {% endblock %}
+{% block body %}
+  <section class="arts">
     <div class="col-12">
-        <h2 class="text-center pb-2">Керамика</h2>
-        <p class="card-text text-muted mx-5 mb-4">Основной медиум в моей работе — керамика.
-                            Этот материал привлекает своей трехмерностью,
-                            объемом, игрой внешнего и внутреннего пространств.
-                            Мне интересен человек, его эмоции, нюансы
-                            состояний и ощущений. В своих работах я создаю
-                            будто бы внешнюю оболочку человека из глины,
-                            развивая тему эмоций через этот образ.
-                            Сами работы могут напоминать археологические раскопки: когда изделие (или останки человека)
-                            собирают из отдельных частей в единое
-                            целое, как и сам человек может быть нецелен и
-                            оторван от себя.
-                            Визуально меня вдохновляет искусство Древней Греции со своим стремлением к созданию
-                            образа идеального человека. В этом антропоцентричном искусстве, человек целен и духовно
-                            и телесно. Однако, дошедшие до нас артефакты
-                            сохранились частями, скульптурные композиции
-                            богов и людей разбиты, расколоты. А ведь именно частичность их искусства так привлекательна
-                            своей недосказанностью и будто бы незавершенностью.
-                            Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен,
-                            но в то же время природа керамики хрупкая
-                            и уязвимая, как и сам человек.</p></div>
+      <h2 class="text-center pb-2">Керамика</h2>
+      <p class="card-text text-muted mx-5 mb-4">Основной медиум в моей работе — керамика.
+        Этот материал привлекает своей трехмерностью,
+        объемом, игрой внешнего и внутреннего пространств.
+        Мне интересен человек, его эмоции, нюансы
+        состояний и ощущений. В своих работах я создаю
+        будто бы внешнюю оболочку человека из глины,
+        развивая тему эмоций через этот образ.
+        Сами работы могут напоминать археологические раскопки: когда изделие (или останки человека)
+        собирают из отдельных частей в единое
+        целое, как и сам человек может быть нецелен и
+        оторван от себя.
+        Визуально меня вдохновляет искусство Древней Греции со своим стремлением к созданию
+        образа идеального человека. В этом антропоцентричном искусстве, человек целен и духовно
+        и телесно. Однако, дошедшие до нас артефакты
+        сохранились частями, скульптурные композиции
+        богов и людей разбиты, расколоты. А ведь именно частичность их искусства так привлекательна
+        своей недосказанностью и будто бы незавершенностью.
+        Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен,
+        но в то же время природа керамики хрупкая
+        и уязвимая, как и сам человек.</p></div>
     <div class="row g-4 mx-4 my-3">
-        <div class="col-lg-3 col-md-2 ">
-            <div class="card">
-                <a href="/spring">
-                    <img src="{{ url_for('static', filename='img/ceramics/image09.jpg') }}" class="img-fluid" alt="art">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-3">Проект «Автопортрет. Изменения»</h4>
-            </div>
+      <div class="col-lg-3 col-md-2 ">
+        <div class="card">
+          <a href="/spring">
+            <img src="{{ url_for('static', filename='img/ceramics/image09.jpg') }}" class="img-fluid" alt="art">
+          </a>
         </div>
-        <div class="col-lg-3 col-md-2 ">
-            <div class="card">
-                <a href="/unclear">
-                    <img src="{{ url_for('static', filename='img/ceramics/image03.jpg') }}" class="img-fluid" alt="cary">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-2">Проект «Изоляция»</h4>
-            </div>
+        <div>
+          <h4 class="text-center mt-3">Проект «Автопортрет. Изменения»</h4>
         </div>
-        <div class="col-lg-3 col-md-2 ">
-            <div class="card">
-                <a href="/blue">
-                    <img src="{{ url_for('static', filename='img/ceramics/image12.jpg') }}" class="img-fluid" alt="cary">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-2">Проект «Нецелостность»</h4>
-            </div>
+      </div>
+      <div class="col-lg-3 col-md-2 ">
+        <div class="card">
+          <a href="/unclear">
+            <img src="{{ url_for('static', filename='img/ceramics/image03.jpg') }}" class="img-fluid" alt="cary">
+          </a>
         </div>
-                <div class="col-lg-3 col-md-2">
-            <div class="card">
-                <a href="/blue">
-                    <img src="{{ url_for('static', filename='img/ceramics/image08.jpg') }}" class="img-fluid" alt="cary">
-                </a>
-            </div>
-            <div>
-                <h4 class="text-center mt-2">Проект «Одиночество»</h4>
-            </div>
+        <div>
+          <h4 class="text-center mt-2">Проект «Изоляция»</h4>
         </div>
+      </div>
+      <div class="col-lg-3 col-md-2 ">
+        <div class="card">
+          <a href="/blue">
+            <img src="{{ url_for('static', filename='img/ceramics/image12.jpg') }}" class="img-fluid" alt="cary">
+          </a>
+        </div>
+        <div>
+          <h4 class="text-center mt-2">Проект «Нецелостность»</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2">
+        <div class="card">
+          <a href="/blue">
+            <img src="{{ url_for('static', filename='img/ceramics/image08.jpg') }}" class="img-fluid" alt="cary">
+          </a>
+        </div>
+        <div>
+          <h4 class="text-center mt-2">Проект «Одиночество»</h4>
+        </div>
+      </div>
     </div>
-</section>
-
-{##}
-{#<section class="gallery min-vh-100 arts">#}
-{#    <div class="col-12">#}
-{#                <h2 class="text-center pb-2">Керамика</h2>#}
-{#        <p class="card-text text-muted mx-5">Основной медиум в моей работе - керамика.#}
-{#                            Этот материал привлекает своей трехмерностью,#}
-{#                            объемом, игрой внешнего и внутреннего пространств.#}
-{#                            Мне интересен человек, его эмоции, нюансы#}
-{#                            состояний и ощущений. В своих работах я создаю#}
-{#                            будто бы внешнюю оболочку человека из глины,#}
-{#                            развивая тему эмоций через этот образ.#}
-{#                            Сами работы могут напоминать археологические раскопки: когда изделие (или останки человека)#}
-{#                            собирают из отдельных частей в единое#}
-{#                            целое, как и сам человек может быть нецелен и#}
-{#                            оторван от себя.#}
-{#                            Визуально меня вдохновляет искусство Древней Греции со своим стремлением к созданию#}
-{#                            образа идеального человека. В этом антропоцентричном искусстве, человек целен и духовно#}
-{#                            и телесно. Однако, дошедшие до нас артефакты#}
-{#                            сохранились частями, скульптурные композиции#}
-{#                            богов и людей разбиты, расколоты. А ведь именно частичность их искусства так привлекательна#}
-{#                            своей недосказанностью и будто бы незавершенностью.#}
-{#                            Через керамику я говорю о человеке, его сущности, существовании, бытии. Этот материал вечен,#}
-{#                            но в то же время природа керамики хрупкая#}
-{#                            и уязвимая, как и сам человек.</p>#}
-{#        <h3 class="text-center">Проект «Автопортет». «Изменения». Фарфоровый шамот, цветные массы,#}
-{#        2016-2017гг. Высота ~ 50см.</h3>#}
-{#        <p class="text-muted mx-5">#}
-{#            Мне хотелось передать момент, когда#}
-{#            на человека нахлынули перемены в#}
-{#            жизни. Влияние изменений в жизни#}
-{#            на человека. Голова чуть отклонена#}
-{#            назад, будто от удивления перед изменившейся ситуацией. Всё движение работы, как удивление.</p></div>#}
-{#    <div class="container-lg">#}
-{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image01.jpg') }}" class="gallery-item"#}
-{#                     alt="image1">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image02.jpg') }}" class="gallery-item"#}
-{#                     alt="image2">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image09.jpg') }}" class="gallery-item"#}
-{#                     alt="image3">#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#    <div class="col-12 my-4"><h3 class="text-center">Проект «Изоляция». Фарфоровый шамот, пигменты, цветные массы,#}
-{#        конструкция, леска. Длина каждй маски ~ 19см. 2020г.</h3>#}
-{#        <p class="text-muted mx-5">#}
-{#            Эта работа посвящена состоянию человека во время изоляции и карантина (весной 2020г.).#}
-{#            Мне как и многим людям особенно тяжело давалось сидеть#}
-{#            дома, не общаться и не видеться с близкими и друзьями. Лица#}
-{#            людей, как и три маски, снаружи#}
-{#            спокойные, почти без эмоций.#}
-{#            Кажется, мы мирно живём, сидим дома. Но в глубине кроется#}
-{#            буря, тревога, страх, ощущение#}
-{#            одиночества, с которыми иногда сложно справиться. Наши#}
-{#            эмоции, скрытые внутри нас,#}
-{#            бушуют. И внутренняя часть масок темная и напряжённая.#}
-{#            Нам приходится скрывать наши#}
-{#            переживания за маской спокойствия...</p></div>#}
-{#    <div class="container-lg">#}
-{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image04.jpg') }}" class="gallery-item"#}
-{#                     alt="image4">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image03.jpg') }}" class="gallery-item"#}
-{#                     alt="image5">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image11.jpg') }}" class="gallery-item"#}
-{#                     alt="image6">#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#    <div class="col-12 my-4"><h3 class="text-center">Проект «Нецелостность». Фарфоровый шамот, 2021г. вся композиция ~#}
-{#        120*80см.</h3>#}
-{#        <p class="text-muted p-2 mx-5">Часто я чувствую нецелостность внутри, и мне будто приходится#}
-{#            собирать себя воедино. И хотя#}
-{#            внешне мы, люди, можем выглядеть цельно, но внутри ощущаем#}
-{#            себя нецельными. Я чувствую, как#}
-{#            уходящее время, жизненные проблемы, цифровизация, стремится#}
-{#            «разрывать» нас на части.#}
-{#            Композиция проекта состоит из#}
-{#            отдельных частей тела, будто бы#}
-{#            внешней оболочки человека. Таким образом я хочу показать нашу#}
-{#            внутреннюю нецелостность.</p></div>#}
-{#    <div class="container-lg">#}
-{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image06.jpg') }}" class="gallery-item"#}
-{#                     alt="image4">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image05.jpg') }}" class="gallery-item"#}
-{#                     alt="image5">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image12.jpg') }}" class="gallery-item"#}
-{#                     alt="image5">#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#    <div class="col-12 my-4"><h3 class="text-center">Проект «Одиночество». Фарфоровый шамот, пигменты, цветные массы,#}
-{#        земля, длина керамической части ~ 100см. 2021г.</h3>#}
-{#        <p class="text-muted mx-5">#}
-{#            Одиночество и освобождает, и сковывает. Однажды мне казалось,#}
-{#            будто меня разбило на куски его тяжестью. Я не могла двинуться, мне хотелось взять кого-то за руку, но будто#}
-{#            не было моих собственных рук.#}
-{#            В проекте части человеческого тела погружены в землю. Земля как начало и конец: единственные моменты в#}
-{#            жизни, когда человек по-настоящему один: «... ибо прах ты#}
-{#            и в прах возвратишься»*. Оставаясь в одиночестве, в постоянных мыслях#}
-{#            о себе, человек как будто погружается в это первоначальное вещество.#}
-{#            Через керамику я осмысляю пережитые мной состояния, обращаясь#}
-{#            к внешней оболочке моего существа. Здесь я разворачиваю внутреннюю часть этой оболочки на зрителя,#}
-{#            таким образом обнажая пребывание#}
-{#            человека в себе, в своем одиночестве.#}
-{#            *Библия, Книга Бытие 3:19.</p></div>#}
-{#    <div class="container-lg">#}
-{#        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image08.jpg') }}" class="gallery-item"#}
-{#                     alt="image4">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image07.jpg') }}" class="gallery-item"#}
-{#                     alt="image5">#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                <img src="{{ url_for('static', filename='img/ceramics/image14.jpg') }}" class="gallery-item"#}
-{#                     alt="image5">#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{#<section class="Modal-section">#}
-{#    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
-{#        <div class="modal-dialog modal-dialog-centered modal-lg">#}
-{#            <div class="modal-content">#}
-{#                <div class="modal-header">#}
-{#                    <h5 class="modal-title" id="exampleModalLabel"></h5>#}
-{#                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
-{#                </div>#}
-{#                <div class="modal-body">#}
-{#                    <img src="{{ url_for('static', filename='img/ceramics/image01.jpg') }}" class="modal-img"#}
-{#                         alt="modal-img">#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#    <script src="static/js/base.js"></script>#}
-{#</section>#}
-
-<footer>
-    <div class="container h5">
-        <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4">
-            <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
-                Copyright |
-                AlexanderZug 2022</a></p>
-            <div class="col-xl-4 col-md-4 text-center mt-2">
-                <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
-                        class="bi bi-telegram"></i></a>
-                <a href="{{ whats_up }}" target="_blank" class="btn btn-outline-light"><i
-                        class="bi bi-whatsapp"></i></a>
-                <a href="{{ vk_page }}" target="_blank" class="btn btn-outline-light"><i class="fa fa-vk"></i></a>
-            </div>
-            <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10">
-                <li><a href="/#top-header" class="nav-link px-1 text-dark">Home</a></li>
-                <li><a href="/#about" class="nav-link px-1 text-dark">About</a></li>
-                <li><a href="/#projects" class="nav-link px-1 text-dark">Projects</a></li>
-                <li><a href="/#shop" class="nav-link px-1 text-dark">Online shop</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-</body>
-</html>
+  </section>
+{% endblock %}
