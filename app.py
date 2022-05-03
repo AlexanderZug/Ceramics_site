@@ -7,7 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
-import models
 import mail_sender
 from config import Config
 
@@ -104,8 +103,6 @@ def graphic():
     return render_template('graphic.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
-
-
 
 
 if __name__ == '__main__':
