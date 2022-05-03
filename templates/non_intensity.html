@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Нецелостность {% endblock %}
+{% block body %}
+  <section class="gallery min-vh-100">
+    <div class="col-12 text-center"><h3>«Нецелостность»</h3>
+      <h4 class="text-center">фарфоровый шамот, 2021-2022гг.
+        вся композиция 120*80 см.</h4></div>
+    <div class="container gx-4">
+      <div class="text-muted pt-3 pb-5">
+        Часто я чувствую нецелостность
+        внутри, и мне будто приходится
+        собирать себя воедино. И хотя
+        внешне мы, люди, можем выглядеть цельно, но внутри ощущаем
+        себя нецельными. Я чувствую, как
+        уходящее время, жизненные проблемы, цифровизация, стремится
+        «разрывать» нас на части.
+        Композиция проекта состоит из
+        отдельных частей тела, будто бы
+        внешней оболочки человека. Таким образом я хочу показать нашу
+        внутреннюю нецелостность.
+      </div>
+    </div>
+    <div class="container-lg">
+      <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/new_img/img15.jpg') }}" class="gallery-item" alt="image4">
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/new_img/img16.jpg') }}" class="gallery-item" alt="image5">
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='img/new_img/img17.jpg') }}" class="gallery-item" alt="image6">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="Modal-section">
+    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="{{ url_for('static', filename='img/arts/img01.jpg') }}" class="modal-img" alt="modal-img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="static/js/base.js"></script>
+  </section>
+{% endblock %}

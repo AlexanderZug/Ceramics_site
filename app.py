@@ -105,6 +105,38 @@ def graphic():
                            vk_page='https://vk.com/id3404775')
 
 
+@app.route('/self_portrait', methods=['GET'])
+def self_portrait():
+    """Route to painting page. Only GET."""
+    return render_template('self_portrait.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
+@app.route('/isolation', methods=['GET'])
+def isolation():
+    """Route to painting page. Only GET."""
+    return render_template('isolation.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
+@app.route('/non_intensity', methods=['GET'])
+def non_intensity():
+    """Route to painting page. Only GET."""
+    return render_template('non_intensity.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
+@app.route('/loneliness', methods=['GET'])
+def loneliness():
+    """Route to painting page. Only GET."""
+    return render_template('loneliness.html', telegram='https://t.me/sveta_pokrovskaya',
+                           whats_up='https://api.whatsapp.com/send/?phone=79852568280',
+                           vk_page='https://vk.com/id3404775')
+
+
 if __name__ == '__main__':
     from errors import *
     import models
