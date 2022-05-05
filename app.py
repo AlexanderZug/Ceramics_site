@@ -7,8 +7,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
+
+import models
+
 import mail_sender
 from config import Config
+
 
 app = Flask(__name__)
 sentry_sdk.init(

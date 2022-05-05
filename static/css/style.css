@@ -59,7 +59,7 @@ header {
 }
 
 .projects, .contact {
-    background: var(--color2);
+    background: var(--color1);
 }
 
 /*header*/
@@ -92,7 +92,7 @@ header {
 
 /*projects*/
 .projects {
-    padding: 30px 0 10px 0;
+    padding: 0 50px 0 50px;
 }
 
 .projects img {
@@ -122,10 +122,10 @@ header {
     cursor: pointer;
 }
 
-.gallery img {
-    width: 400px;
-    height: 400px !important;
-}
+/*.gallery img {*/
+/*    width: 400px;*/
+/*    height: 400px !important;*/
+/*}*/
 
 #gallery-modal .modal-img {
     width: 100%;
@@ -136,7 +136,7 @@ header {
 /*shop*/
 
 .shop {
-    padding: 30px 0 60px 0;
+    padding: 0 40px 0 40px;
 }
 
 .graphic {
