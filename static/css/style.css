@@ -48,7 +48,7 @@ header {
     content: " ";
     display: block;
     width: 100%;
-    background-color: black;
+    background-color: white;
     height: 1px;
     transition: all .3s;
     transform: scale(0);
@@ -62,6 +62,9 @@ header {
     background: var(--color1);
 }
 
+#navbarText a {
+    color: white!important;
+}
 /*header*/
 
 /*carousel*/
@@ -122,11 +125,6 @@ header {
     cursor: pointer;
 }
 
-/*.gallery img {*/
-/*    width: 400px;*/
-/*    height: 400px !important;*/
-/*}*/
-
 #gallery-modal .modal-img {
     width: 100%;
 }
@@ -177,6 +175,14 @@ footer {
 
 footer {
     padding: 30px 0;
+}
+
+#footer-color a {
+    color: white!important;
+}
+
+#github-color p a {
+    color: white!important;
 }
 
 /*footer*/
