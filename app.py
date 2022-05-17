@@ -17,7 +17,7 @@ from config import Config
 
 app = Flask(__name__)
 sentry_sdk.init(
-    dsn="https://2cee952aa4f245f786a29a41ac6183d8@o1204683.ingest.sentry.io/6346581",
+    dsn="https://d5b6d50e80b1481bad2cd5ad48cba935@o1204683.ingest.sentry.io/6416499",
     integrations=[FlaskIntegration()],
     traces_sample_rate=1.0
 )
