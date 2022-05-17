@@ -3,6 +3,7 @@ import re
 import sentry_sdk
 from flask import Flask, flash, render_template, request, redirect
 from flask_mail import Mail
+from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
@@ -23,6 +24,7 @@ sentry_sdk.init(
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 mail = Mail(app)
+moment = Moment(app)
 toastr = Toastr(app)
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 

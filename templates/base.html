@@ -18,6 +18,7 @@
     {{ toastr.include_jquery() }}
     {{ toastr.include_toastr_css() }}
     {{ toastr.message() }}
+    {{ moment.include_moment() }}
   </head>
   {#header#}
   <header id="top-header">
@@ -53,7 +54,7 @@
         <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4" id="github-color">
           <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
             Copyright |
-            AlexanderZug 2022</a></p>
+            AlexanderZug {{ moment().format('YYYY') }}</a></p>
           <div class="col-xl-4 col-md-4 text-center mt-2">
             <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
                 class="bi bi-telegram"></i></a>
