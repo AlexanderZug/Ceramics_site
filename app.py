@@ -55,7 +55,7 @@ def index():
 
 @app.route('/arts', methods=['GET'])
 def arts():
-    """Route to painting page. Only GET."""
+    """Route to main page of painting. Only GET."""
     return render_template('arts.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -63,7 +63,7 @@ def arts():
 
 @app.route('/ceramics', methods=['GET'])
 def ceramics():
-    """Route to ceramics page. Only GET."""
+    """Route to main page of ceramics. Only GET."""
     return render_template('ceramics.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -71,7 +71,7 @@ def ceramics():
 
 @app.route('/unclear', methods=['GET'])
 def unclear_project():
-    """Route to painting page. Only GET."""
+    """Route to one of the painting page. Only GET."""
     return render_template('unclear_priject.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -79,7 +79,7 @@ def unclear_project():
 
 @app.route('/blue', methods=['GET'])
 def blue_project():
-    """Route to painting page. Only GET."""
+    """Route to one of the painting page. Only GET."""
     return render_template('blue_project.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -87,7 +87,7 @@ def blue_project():
 
 @app.route('/spring', methods=['GET'])
 def spring():
-    """Route to painting page. Only GET."""
+    """Route to one of the painting page. Only GET."""
     return render_template('spring_project.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -95,7 +95,7 @@ def spring():
 
 @app.route('/fear', methods=['GET'])
 def fear():
-    """Route to painting page. Only GET."""
+    """Route to one of the painting page. Only GET."""
     return render_template('fear.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -103,7 +103,7 @@ def fear():
 
 @app.route('/graphic', methods=['GET'])
 def graphic():
-    """Route to painting page. Only GET."""
+    """Route to graphic page. Only GET."""
     return render_template('graphic.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -111,7 +111,7 @@ def graphic():
 
 @app.route('/self_portrait', methods=['GET'])
 def self_portrait():
-    """Route to painting page. Only GET."""
+    """Route to one of the projects page. Only GET."""
     return render_template('self_portrait.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -119,7 +119,7 @@ def self_portrait():
 
 @app.route('/isolation', methods=['GET'])
 def isolation():
-    """Route to painting page. Only GET."""
+    """Route to one of the projects page. Only GET."""
     return render_template('isolation.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -127,7 +127,7 @@ def isolation():
 
 @app.route('/non_intensity', methods=['GET'])
 def non_intensity():
-    """Route to painting page. Only GET."""
+    """Route to one of the projects page. Only GET."""
     return render_template('non_intensity.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
@@ -135,7 +135,7 @@ def non_intensity():
 
 @app.route('/loneliness', methods=['GET'])
 def loneliness():
-    """Route to painting page. Only GET."""
+    """Route to one of the projects page. Only GET."""
     return render_template('loneliness.html', telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')

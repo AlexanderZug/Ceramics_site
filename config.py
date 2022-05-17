@@ -1,4 +1,3 @@
-
 class Config:
     """Class with configurations."""
 
@@ -11,4 +10,3 @@ class Config:
     MAIL_USERNAME: str = 'developer.unterwegs@gmail.com'
     MAIL_PASSWORD: str = 'jvowpupvmopkuchn'
     MAIL_DEFAULT_SENDER: str = 'developer.unterwegs@gmail.com'
-
