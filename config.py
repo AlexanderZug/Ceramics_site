@@ -10,3 +10,5 @@ class Config:
     MAIL_USERNAME: str = 'developer.unterwegs@gmail.com'
     MAIL_PASSWORD: str = 'jvowpupvmopkuchn'
     MAIL_DEFAULT_SENDER: str = 'developer.unterwegs@gmail.com'
+    SECURITY_PASSWORD_SALT: str = 'ggggdhhhuunakb12234'
+    SECURITY_PASSWORD_HASH: str = 'sha512_crypt'
