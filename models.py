@@ -20,13 +20,12 @@ class Client(db.Model):
 
 
 class MainPage(db.Model):
+    """Class for edit index (biography and CV)."""
+
     id: int = db.Column(db.Integer, primary_key=True)
     biography_title: str = db.Column(db.String(200))
-    education_one: str = db.Column(db.String(350), nullable=True)
-    # education_two: str = db.Column(db.String(350))
-    # education_three: str = db.Column(db.String(350))
-    # education_four: str = db.Column(db.String(350))
-    # education_five: str = db.Column(db.String(350))
+    education: str = db.Column(db.String(350))
+    curriculum_vitae: str = db.Column(db.String(400))
 
 
 db.create_all()
