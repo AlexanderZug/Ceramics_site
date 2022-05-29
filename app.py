@@ -8,12 +8,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
-
 import models
 
 import mail_sender
 from config import Config
-
 
 app = Flask(__name__)
 sentry_sdk.init(
@@ -37,6 +35,7 @@ def index():
     if the validation passes,
     then writes the data to the database and sends an email.
     """
+    bio = models.MainPage.query.all()
     if request.method == 'POST':
         rec = request.form
         if len(rec.get('name')) < 2:
@@ -50,7 +49,7 @@ def index():
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
             return redirect('/')
-    return render_template('index.html', telegram='https://t.me/sveta_pokrovskaya',
+    return render_template('index.html', bio=bio, telegram='https://t.me/sveta_pokrovskaya',
                            whats_up='https://api.whatsapp.com/send/?phone=79852568280',
                            vk_page='https://vk.com/id3404775')
 
@@ -146,5 +145,6 @@ def loneliness():
 if __name__ == '__main__':
     from errors import *
     import models
+    import admin
 
     app.run(debug=True, host='0.0.0.0', port=5001)

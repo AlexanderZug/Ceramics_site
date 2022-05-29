@@ -47,15 +47,12 @@
           <h5>Состояния, эмоции, переживания.</h5>
           <h5>Мои основные темы.</h5>
           <h3 class="fw-weight-bold pt-4"><strong>BIO</strong></h3>
-          <h5 class="pb-3">Живу и работаю в Москве</h5>
-          <h5>• 2021-2022гг. — учеба в «Свободных мастерских» Московского Музея Современного Искусства.</h5>
-          <h5>• 2019-настоящее время — работа в студии Ne Malevichi, преподавание лепки и керамики детям и взрослым,
-            проведение лекций и экскурсий по истории керамики.</h5>
-          <h5>• 2016-2019гг. — обучение графическому дизайну на курсах в HSE art and design school, B&D,
-            bangbangeducation,
-            работа графическим дизайнером.</h5>
-          <h5>• 2014-2017гг. — работа в керамической мастерской.</h5>
-          <h5>• 2006-2012гг. — обучение МГХПА им. С.Г. Строганова, отделение керамики.</h5>
+          {% for biography in bio %}
+            {% if biography.biography_title is not none %}
+              <h5 class="pb-3">{{ biography.biography_title }}</h5>
+            {% endif %}
+            <h5>{{ biography.education_one }}</h5>
+          {% endfor %}
         </div>
         <div class="col-lg-6 col-sm-12 mb-sm-5 mt-sm-5 text-center mt-2">
           <img src="{{ url_for('static', filename='img/about_img.jpg') }}" class="img-fluid">
@@ -63,48 +60,48 @@
       </div>
     </div>
 
-   <div class="text-center pt-5">
-        <button type="button" class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Curriculum vitae
-        </button>
-      </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header pt-3">
-              <h5 class="modal-title " id="exampleModalLabel">Curriculum vitae</h5>
-            </div>
-            <div class="modal-body">
-              <h6>• 2022г. групповая выставка студентов Свободных мастерских ММОМА
-                с работой «Изоляция» в галерее Nazavod, Москва</h6>
-              <h6>• 2021г. онлайн - Арт-резиденция Get Art Project по созданию проекта,
-                Проект «Нецелостность»</h6>
-              <h6>• 2020г. онлайн - Арт-резиденция Get Art Fit</h6>
-              <h6>• 2019г. выставка керамики «Тень женщины», с работой «Автопортрет.
-                Изменения», музей-заповедник «Царицыно», Москва</h6>
-              <h6>• 2015г. Выставка графики в ХКЦ «Встреча» с серией акварелей «Русские каникулы»</h6>
-              <h6>• 2012г. Выставка «Творческие среды», ЦДХ, с дипломным проектом
-                «Пласты земли», керамика, мателличеcкая конструкция</h6>
-              <h6>• 2012г. Статья в книге «Керамика будущего», Москва</h6>
-              <h6>• 2011г. 30-я Молодежная выставка МСХ, секция прикладного искусства, керамика, работа
-                «Лица»</h6>
-              <h6>• 2011г. керамический, молодежный симпозиум в Опошне (Украина).
-                Диплом за лучшее керамическое панно</h6>
-              <h6>• 2010г. Выставка «Стекло и керамика на траве» в усадьбе Архангель-
-                ское с работой «Чайник-трава», 2010г.</h6>
-              <h6>• 2010г. участие в студенческом проекте-перфомансе по цветоведению
-                с педагогом МГХПА им.С.Г.Строганова Юрием Сычевым в Гараже</h6>
-              <h6>• 2009г. Выставка-конкурс “Летний пленэр”
-                МГХПУ им. С.Г. Строганова, живопись, этюды, Москва</h6>
-              <h6>• 2007г. Второй фестиваль-смотр “Зимние грезы”,
-                Москва</h6>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+    <div class="text-center pt-5">
+      <button type="button" class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Curriculum vitae
+      </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header pt-3">
+            <h5 class="modal-title " id="exampleModalLabel">Curriculum vitae</h5>
+          </div>
+          <div class="modal-body">
+            <h6>• 2022г. групповая выставка студентов Свободных мастерских ММОМА
+              с работой «Изоляция» в галерее Nazavod, Москва</h6>
+            <h6>• 2021г. онлайн - Арт-резиденция Get Art Project по созданию проекта,
+              Проект «Нецелостность»</h6>
+            <h6>• 2020г. онлайн - Арт-резиденция Get Art Fit</h6>
+            <h6>• 2019г. выставка керамики «Тень женщины», с работой «Автопортрет.
+              Изменения», музей-заповедник «Царицыно», Москва</h6>
+            <h6>• 2015г. Выставка графики в ХКЦ «Встреча» с серией акварелей «Русские каникулы»</h6>
+            <h6>• 2012г. Выставка «Творческие среды», ЦДХ, с дипломным проектом
+              «Пласты земли», керамика, мателличеcкая конструкция</h6>
+            <h6>• 2012г. Статья в книге «Керамика будущего», Москва</h6>
+            <h6>• 2011г. 30-я Молодежная выставка МСХ, секция прикладного искусства, керамика, работа
+              «Лица»</h6>
+            <h6>• 2011г. керамический, молодежный симпозиум в Опошне (Украина).
+              Диплом за лучшее керамическое панно</h6>
+            <h6>• 2010г. Выставка «Стекло и керамика на траве» в усадьбе Архангель-
+              ское с работой «Чайник-трава», 2010г.</h6>
+            <h6>• 2010г. участие в студенческом проекте-перфомансе по цветоведению
+              с педагогом МГХПА им.С.Г.Строганова Юрием Сычевым в Гараже</h6>
+            <h6>• 2009г. Выставка-конкурс “Летний пленэр”
+              МГХПУ им. С.Г. Строганова, живопись, этюды, Москва</h6>
+            <h6>• 2007г. Второй фестиваль-смотр “Зимние грезы”,
+              Москва</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   {#projects#}
@@ -114,7 +111,8 @@
       <div class="col">
         <div class="card">
           <a href="/arts">
-            <img src="{{ url_for('static', filename='img/new_img/img25.jpg') }}" class="card-img-top" alt="Светина картинка была тут">
+            <img src="{{ url_for('static', filename='img/new_img/img25.jpg') }}" class="card-img-top"
+                 alt="Светина картинка была тут">
           </a>
         </div>
         <div>
@@ -124,7 +122,8 @@
       <div class="col">
         <div class="card">
           <a href="/ceramics">
-            <img src="{{ url_for('static', filename='img/new_img/img01.jpg') }}" class="card-img-top" alt="Светина картинка была тут">
+            <img src="{{ url_for('static', filename='img/new_img/img01.jpg') }}" class="card-img-top"
+                 alt="Светина картинка была тут">
           </a>
         </div>
         <div>
@@ -142,14 +141,16 @@
       <div class="col">
         <div class="card">
           <a href="/graphic">
-            <img src="{{ url_for('static', filename='img/new_img/img44.jpg') }}" class="card-img-top" alt="Светина картинка была тут">
+            <img src="{{ url_for('static', filename='img/new_img/img44.jpg') }}" class="card-img-top"
+                 alt="Светина картинка была тут">
           </a>
         </div>
       </div>
       <div class="col">
         <div class="card">
           <a href="/graphic">
-            <img src="{{ url_for('static', filename='img/new_img/img43.jpg') }}" class="card-img-top" alt="Светина картинка была тут">
+            <img src="{{ url_for('static', filename='img/new_img/img43.jpg') }}" class="card-img-top"
+                 alt="Светина картинка была тут">
           </a>
         </div>
       </div>
