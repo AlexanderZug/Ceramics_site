@@ -1,10 +1,10 @@
+from flask import redirect, request, url_for
 from flask_admin import Admin, AdminIndexView
+from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
-from flask import redirect, url_for, request
 
 from app import app, db
 from models import Client, MainPage, Role, User
-from flask_admin.contrib.sqla import ModelView
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)

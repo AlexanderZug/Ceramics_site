@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from flask_security import UserMixin, RoleMixin
+from flask_security import RoleMixin, UserMixin
 
 from app import db
 
