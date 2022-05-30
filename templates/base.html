@@ -49,28 +49,7 @@
   <body>
     {% block body %}{% endblock %}
     {#footer#}
-    <footer>
-      <div class="container h5">
-        <div class="d-flex flex-wrap justify-content align-items-center px-2 my-2 mx-4" id="github-color">
-          <p class="col-xl-4 col-md-4 mb-0 me-auto"><a href="https://github.com/AlexanderZug" target="_blank">©
-            Copyright |
-            AlexanderZug {{ moment().format('YYYY') }}</a></p>
-          <div class="col-xl-4 col-md-4 text-center mt-2">
-            <a href="{{ telegram }}" target="_blank" class="btn btn-outline-light"><i
-                class="bi bi-telegram"></i></a>
-            <a href="{{ whats_up }}" target="_blank" class="btn btn-outline-light"><i
-                class="bi bi-whatsapp"></i></a>
-            <a href="{{ vk_page }}" target="_blank" class="btn btn-outline-light"><i class="fa fa-vk"></i></a>
-          </div>
-          <ul class="nav col-xl-4 col-md-4 justify-content ms-auto top-menu py-10" id="footer-color">
-            <li><a href="/#top-header" class="nav-link px-1">Home</a></li>
-            <li><a href="/#about" class="nav-link px-1">обо мне</a></li>
-            <li><a href="/#projects" class="nav-link px-1">проекты</a></li>
-            <li><a href="/#shop" class="nav-link px-1">магазин</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     {{ toastr.include_toastr_js() }}
