@@ -8,10 +8,11 @@ from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 from config import Config
+from person_data import SENTRY
 
 app = Flask(__name__)
 sentry_sdk.init(
-    dsn="https://d5b6d50e80b1481bad2cd5ad48cba935@o1204683.ingest.sentry.io/6416499",
+    dsn=SENTRY,
     integrations=[FlaskIntegration()],
     traces_sample_rate=1.0
 )

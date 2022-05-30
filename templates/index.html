@@ -48,10 +48,10 @@
           <h5>Мои основные темы.</h5>
           <h3 class="fw-weight-bold pt-4"><strong>BIO</strong></h3>
           {% for biography in bio %}
-            {% if biography.biography_title is not none %}
+            {% if biography.biography_title %}
               <h5 class="pb-3">{{ biography.biography_title }}</h5>
             {% endif %}
-            {% if biography.education is not none %}
+            {% if biography.education%}
               <h5>{{ biography.education }}</h5>
             {% endif %}
           {% endfor %}
@@ -75,7 +75,7 @@
           </div>
           <div class="modal-body">
             {% for biography in bio %}
-              {% if biography.curriculum_vitae is not none %}
+              {% if biography.curriculum_vitae %}
                 <h6>{{ biography.curriculum_vitae }}</h6>
               {% endif %}
             {% endfor %}

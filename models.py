@@ -28,6 +28,8 @@ roles_users = db.Table('roles_users',
 
 
 class User(db.Model, UserMixin):
+    """User-model for flask-admin."""
+
     id: int = db.Column(db.Integer, primary_key=True)
     email: str = db.Column(db.String(40))
     password: str = db.Column(db.String(40))
@@ -36,6 +38,8 @@ class User(db.Model, UserMixin):
 
 
 class Role(db.Model, RoleMixin):
+    """Role-model for flask-admin."""
+
     id: int = db.Column(db.Integer, primary_key=True)
     name: str = db.Column(db.String(100), unique=True)
 
