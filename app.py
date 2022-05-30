@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 from flask_migrate import Migrate
-from flask_security import login_required
+
 import models
 
 import mail_sender
@@ -57,7 +57,6 @@ def index():
 
 
 @app.route('/arts', methods=['GET'])
-@login_required
 def arts():
     """Route to main page of painting. Only GET."""
     return render_template('arts.html', telegram='https://t.me/sveta_pokrovskaya',
