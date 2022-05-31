@@ -53,4 +53,11 @@ class MainPage(db.Model):
     curriculum_vitae: str = db.Column(db.String(400))
 
 
+class Graphic(db.Model):
+    id: int = db.Column(db.Integer, primary_key=True)
+    description: str = db.Column(db.String(400))
+    prise_and_size: str = db.Column(db.String(100))
+    image: str = db.Column(db.Text, nullable=True, default='img/new_img/img43.jpg')
+
+
 db.create_all()

@@ -4,7 +4,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
 
 from app import app, db
-from models import Client, MainPage, Role, User
+from models import Client, MainPage, Role, User, Graphic
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
@@ -31,3 +31,4 @@ class HideAdminPage(AdminViewMix, AdminIndexView):
 admin = Admin(app, 'Светлана Покровская', url='/', index_view=HideAdminPage(name='Home'))
 admin.add_view(AdminView(Client, db.session))
 admin.add_view(AdminView(MainPage, db.session))
+admin.add_view(AdminView(Graphic, db.session))

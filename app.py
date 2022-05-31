@@ -1,5 +1,6 @@
 import sentry_sdk
 from flask import Flask
+from flask_babelex import Babel
 from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_moment import Moment
@@ -22,6 +23,7 @@ migrate = Migrate(app, db)
 mail = Mail(app)
 moment = Moment(app)
 toastr = Toastr(app)
+babel = Babel(app)
 
 if __name__ == '__main__':
     import admin
