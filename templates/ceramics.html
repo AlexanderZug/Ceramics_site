@@ -29,7 +29,7 @@
         <div class="row row-cols-1 row-cols-md-2 gx-4 gy-4">
           <div class="col">
             <div class="card">
-              <a href="/self_portrait">
+              <a href="{{ url_for('self_portrait') }}">
                 <img src="{{ url_for('static', filename='img/new_img/img03.jpg') }}" class="card-img-top" alt="art">
               </a>
             </div>
@@ -39,7 +39,7 @@
           </div>
           <div class="col">
             <div class="card">
-              <a href="/isolation">
+              <a href="{{ url_for('isolation') }}">
                 <img src="{{ url_for('static', filename='img/new_img/img05.jpg') }}" class="card-img-top" alt="cary">
               </a>
             </div>
@@ -51,7 +51,7 @@
         <div class="row row-cols-1 row-cols-md-2 gx-4 gy-4 mt-3">
           <div class="col">
             <div class="card">
-              <a href="/non_intensity">
+              <a href="{{ url_for('non_intensity') }}">
                 <img src="{{ url_for('static', filename='img/new_img/img15.jpg') }}" class="card-img-top" alt="art">
               </a>
             </div>
@@ -61,7 +61,7 @@
           </div>
           <div class="col">
             <div class="card">
-              <a href="/loneliness">
+              <a href="{{ url_for('loneliness') }}">
                 <img src="{{ url_for('static', filename='img/new_img/img13.jpg') }}" class="card-img-top" alt="cary">
               </a>
             </div>
