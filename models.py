@@ -54,6 +54,8 @@ class MainPage(db.Model):
 
 
 class Graphic(db.Model):
+    """Class for edit graphic (description, prise_and_size, image)."""
+
     id: int = db.Column(db.Integer, primary_key=True)
     description: str = db.Column(db.String(400))
     prise_and_size: str = db.Column(db.String(100))

@@ -1,4 +1,5 @@
 import os
+from person_data import *
 
 
 class Config:
@@ -10,10 +11,10 @@ class Config:
     MAIL_SERVER: str = 'smtp.gmail.com'
     MAIL_PORT: int = 465
     MAIL_USE_SSL: bool = True
-    MAIL_USERNAME: str = 'developer.unterwegs@gmail.com'
-    MAIL_PASSWORD: str = 'jvowpupvmopkuchn'
-    MAIL_DEFAULT_SENDER: str = 'developer.unterwegs@gmail.com'
-    SECURITY_PASSWORD_SALT: str = 'ggggdhhhuunakb12234'
+    MAIL_USERNAME: str = MAIL_USERNAME
+    MAIL_PASSWORD: str = MAIL_PASSWORD
+    MAIL_DEFAULT_SENDER: str = MAIL_DEFAULT_SENDER
+    SECURITY_PASSWORD_SALT: str = SECURITY_PASSWORD_SALT
     SECURITY_PASSWORD_HASH: str = 'sha512_crypt'
     BABEL_DEFAULT_LOCALE: str = 'ru'
-    UPLOAD_FOLDER: str ='static/uploads/img/'
+    UPLOAD_FOLDER: str = 'static/uploads/img/'
