@@ -1,6 +1,11 @@
+import os
+import pathlib
 import re
+from os.path import join, dirname, realpath
 
 from flask import flash, redirect, render_template, request
+from flask_login import current_user
+from werkzeug.utils import secure_filename
 
 import mail_sender
 import models
@@ -85,10 +90,22 @@ def fear():
                            vk_page=VK)
 
 
-@app.route('/graphic', methods=['GET'])
-def graphic():
+UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/uploads')
+
+
+@app.route('/graphic_page', methods=['GET', 'POST'])
+def graphic_page():
     """Route to graphic page. Only GET."""
-    return render_template('graphic.html', telegram=TELEGRAM,
+    if request.method == 'POST':
+        if request.files['image'].filename != '':
+            filepath = secure_filename(request.files['image'].filename)
+            image = request.files['image']
+            image.save(os.path.join(app.config['UPLOADS_PATH'], secure_filename(image.filename)))
+            graphic = models.Graphic.query.get(current_user.id)
+            graphic.image = filepath
+            db.session.add(graphic)
+            db.session.commit()
+    return render_template('graphic_page.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
                            vk_page=VK)
 
