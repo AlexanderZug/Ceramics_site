@@ -14,10 +14,12 @@
             <input class="btn btn-light" type="submit" value="Сохранить">
           </form>
         {% endif %}
+      {% for foto in bd_foto %}
         <div class="col">
-          <img src="{{ url_for('static', filename='img/img43.jpg') }}" class="gallery-item" alt="image4">
+          <img src="static/uploads/{{ foto.image }}" class="gallery-item" alt="image4">
           <p class="text-center text-muted">Яблоки. А4 6000 р., 2500 р.</p>
         </div>
+      {% endfor %}
         <div class="col">
           <img src="{{ url_for('static', filename='img/img44.jpg') }}" class="gallery-item" alt="image5">
           <p class="text-center text-muted">Ветка груши. А5 3500 р., 1500 р.</p>

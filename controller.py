@@ -90,24 +90,21 @@ def fear():
                            vk_page=VK)
 
 
-UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/uploads')
-
-
 @app.route('/graphic_page', methods=['GET', 'POST'])
 def graphic_page():
     """Route to graphic page. Only GET."""
+    bd_foto = models.Graphic.query.all()
     if request.method == 'POST':
         if request.files['image'].filename != '':
             filepath = secure_filename(request.files['image'].filename)
             image = request.files['image']
             image.save(os.path.join(app.config['UPLOADS_PATH'], secure_filename(image.filename)))
-            graphic = models.Graphic.query.get(current_user.id)
-            graphic.image = filepath
+            graphic = models.Graphic(image=filepath)
             db.session.add(graphic)
             db.session.commit()
     return render_template('graphic_page.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK, bd_foto=bd_foto)
 
 
 @app.route('/self_portrait', methods=['GET'])
