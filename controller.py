@@ -93,7 +93,7 @@ def fear():
 @app.route('/graphic_page', methods=['GET', 'POST'])
 def graphic_page():
     """Route to graphic page. Only GET."""
-    bd_foto = models.Graphic.query.all()
+    bd_foto_prise = models.Graphic.query.all()
     if request.method == 'POST':
         if request.files['image'].filename != '':
             filepath = secure_filename(request.files['image'].filename)
@@ -104,7 +104,7 @@ def graphic_page():
             db.session.commit()
     return render_template('graphic_page.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_foto=bd_foto)
+                           vk_page=VK, bd_foto_prise=bd_foto_prise)
 
 
 @app.route('/self_portrait', methods=['GET'])
