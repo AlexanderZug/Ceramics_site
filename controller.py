@@ -1,10 +1,8 @@
 import os
-import pathlib
 import re
-from os.path import join, dirname, realpath
+
 
 from flask import flash, redirect, render_template, request
-from flask_login import current_user
 from werkzeug.utils import secure_filename
 
 import mail_sender
@@ -94,8 +92,9 @@ def fear():
 def graphic_page():
     """Route to graphic page. Only GET."""
     bd_foto_prise = models.Graphic.query.all()
+    last_img = db.session.query(models.Graphic).order_by(models.Graphic.id.desc()).first()
     if request.method == 'POST':
-        if request.files['image'].filename != '':
+        if request.files['image'].filename != '' and request.files['image'].filename != last_img.image:
             filepath = secure_filename(request.files['image'].filename)
             image = request.files['image']
             image.save(os.path.join(app.config['UPLOADS_PATH'], secure_filename(image.filename)))
