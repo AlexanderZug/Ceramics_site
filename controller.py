@@ -92,7 +92,7 @@ def fear():
 def graphic_page():
     """Route to graphic page. Only GET."""
     bd_foto_prise = models.Graphic.query.all()
-    last_img = db.session.query(models.Graphic).order_by(models.Graphic.id.desc()).first()
+    last_img = models.Graphic.query.order_by(models.Graphic.id.desc()).first()
     if request.method == 'POST':
         if request.files['image'].filename != '' and request.files['image'].filename != last_img.image:
             filepath = secure_filename(request.files['image'].filename)
