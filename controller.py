@@ -1,7 +1,6 @@
 import os
 import re
 
-
 from flask import flash, redirect, render_template, request
 from werkzeug.utils import secure_filename
 
@@ -19,7 +18,7 @@ def index():
     When GET returns the main page.
     When POST performs validation,
     if the validation passes,
-    then writes the data to the database and sends an email.
+    then writes the data to DB and sends an email.
     """
     bio = models.MainPage.query.all()
     if request.method == 'POST':
@@ -90,14 +89,19 @@ def fear():
 
 @app.route('/graphic_page', methods=['GET', 'POST'])
 def graphic_page():
-    """Route to graphic page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
     bd_foto_prise = models.Graphic.query.all()
     last_img = models.Graphic.query.order_by(models.Graphic.id.desc()).first()
     if request.method == 'POST':
         if request.files['image'].filename != '' and request.files['image'].filename != last_img.image:
             filepath = secure_filename(request.files['image'].filename)
             image = request.files['image']
-            image.save(os.path.join(app.config['UPLOADS_PATH'], secure_filename(image.filename)))
+            image.save(os.path.join(app.config['UPLOADS_PATH'],
+                                    secure_filename(image.filename)))
             graphic = models.Graphic(image=filepath)
             db.session.add(graphic)
             db.session.commit()
