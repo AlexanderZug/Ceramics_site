@@ -4,7 +4,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
 
 from app import app, db
-from models import Client, MainPage, Role, User, Graphic
+from models import Client, Graphic, MainPage, Role, User
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
