@@ -5,7 +5,7 @@
     <div class="col-12 text-center"><h3>Графика</h3>
       {% for desc in  bd_foto_prise %}
         {% if desc.description %}
-      <p class="text-center text-muted pb-2">{{  desc.description }}</p></div>
+      <p class="text-center text-muted pb-2">{{ desc.description }}</p></div>
         {% endif %}
       {% endfor %}
     <div class="container-lg">
@@ -20,7 +20,7 @@
           {% if foto.image and foto.prise_and_size %}
           <div class="col">
             <img src="static/uploads/{{ foto.image }}" class="gallery-item" alt="image4">
-            <p class="text-center text-muted">{{ foto.prise_and_size}}</p>
+            <p class="text-center text-muted">{{ foto.prise_and_size }}</p>
           </div>
           {% endif %}
         {% endfor %}
