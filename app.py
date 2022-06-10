@@ -7,7 +7,7 @@ from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
-
+from flask_sessionstore import Session
 from config import Config
 from person_data import SENTRY
 
@@ -24,6 +24,9 @@ mail = Mail(app)
 moment = Moment(app)
 toastr = Toastr(app)
 babel = Babel(app)
+app.config['SESSION_SQLALCHEMY'] = db
+Session(app)
+
 
 if __name__ == '__main__':
     import admin

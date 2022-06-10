@@ -8,6 +8,7 @@ import mail_sender
 import models
 from app import app, db
 from person_data import TELEGRAM, VK, WHATS_UP
+from utils import img_handler
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
@@ -79,12 +80,23 @@ def spring():
                            vk_page=VK)
 
 
-@app.route('/fear', methods=['GET'])
+@app.route('/fear', methods=['GET', 'POST'])
 def fear():
     """Route to one of the painting page. Only GET."""
+    bd_fear_disc = models.ArtsPage.query.all()
+    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
+    if request.method == 'POST':
+        try:
+            check_img = request.files['image'].filename != '' and request.files['image'].filename != last_img.image_fear
+        except AttributeError:
+            check_img = True
+        if check_img:
+            fear_img = models.ArtsPage(image_fear=img_handler())
+            db.session.add(fear_img)
+            db.session.commit()
     return render_template('fear.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK, bd_fear_disc=bd_fear_disc)
 
 
 @app.route('/graphic_page', methods=['GET', 'POST'])
@@ -95,14 +107,13 @@ def graphic_page():
     the path to photography is recorded in the DB.
     """
     bd_foto_prise = models.Graphic.query.all()
-    last_img = models.Graphic.query.order_by(models.Graphic.id.desc()).first()
     if request.method == 'POST':
-        if request.files['image'].filename != '' and request.files['image'].filename != last_img.image:
-            filepath = secure_filename(request.files['image'].filename)
-            image = request.files['image']
-            image.save(os.path.join(app.config['UPLOADS_PATH'],
-                                    secure_filename(image.filename)))
-            graphic = models.Graphic(image=filepath)
+        try:
+            last_img = models.Graphic.query.order_by(models.Graphic.id.desc()).first()
+        except AttributeError:
+            last_img = True
+        if last_img:
+            graphic = models.Graphic(image=img_handler())
             db.session.add(graphic)
             db.session.commit()
     return render_template('graphic_page.html', telegram=TELEGRAM,

@@ -9,6 +9,7 @@ class Config:
 
     SECRET_KEY: str = os.urandom(20)
     SQLALCHEMY_DATABASE_URI: str = 'sqlite:///website.db'
+    SESSION_TYPE: str = 'sqlalchemy'
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = True
     MAIL_SERVER: str = 'smtp.gmail.com'
     MAIL_PORT: int = 465

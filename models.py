@@ -59,7 +59,17 @@ class Graphic(db.Model):
     id: int = db.Column(db.Integer, primary_key=True)
     description: str = db.Column(db.String(400))
     prise_and_size: str = db.Column(db.String(100))
-    image: str = db.Column(db.Text, nullable=True, default='img/new_img/img43.jpg')
+    image: str = db.Column(db.Text, nullable=True, default='')
+
+
+class ArtsPage(db.Model):
+    id: int = db.Column(db.Integer, primary_key=True)
+    description_fear: str = db.Column(db.String(800))
+    description_blue: str = db.Column(db.String(800))
+    description_unclear: str = db.Column(db.String(800))
+    image_fear: str = db.Column(db.Text, nullable=True)
+    image_blue: str = db.Column(db.Text, nullable=True)
+    image_unclear: str = db.Column(db.Text, nullable=True)
 
 
 db.create_all()

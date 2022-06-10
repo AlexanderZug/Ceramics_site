@@ -5,35 +5,29 @@
     <div class="col-12 text-center"><h3>«Страх»</h3>
       <h4 class="text-center pb-2">138*122 см., оргалит, масло 2021г.</h4></div>
     <div class="container gx-4">
-      <div class="text-muted pt-3 pb-5">
-        Полотно об ощущениях
-        весны, переживании
-        этого периода. Красивое,
-        динамичное, контрастное, чувственное время
-        года, когда все пробуждается, раскрывается
-        и начинает новую жизнь.
-        Внизу черная земля,
-        которая просыпается
-        и тянется вверх. Голубое
-        — это небо, вселенная
-        или Бог, это свобода,
-        которая приходит на
-        землю, и эти две части:
-        небо и земля пересекаются, перемешиваются
-        и растут вместе.
-      </div>
+      {% for disc in  bd_fear_disc %}
+        {% if disc.description_fear %}
+          <div class="text-muted pt-3 pb-5">
+            {{ disc.description_fear }}
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="container-lg">
+      {% if current_user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data">
+          <input class="btn btn-light mb-2" type="file" name="image">
+          <input class="btn btn-light" type="submit" value="Сохранить">
+        </form>
+      {% endif %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img20.jpg') }}" class="gallery-item" alt="image4">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img19.jpg') }}" class="gallery-item" alt="image5">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img21.jpg') }}" class="gallery-item" alt="image6">
-        </div>
+        {% for foto in bd_fear_disc %}
+          {% if foto.image_fear %}
+            <div class="col">
+              <img src="static/uploads/{{ foto.image_fear }}" class="gallery-item" alt="image4">
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </section>

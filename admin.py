@@ -4,7 +4,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
 
 from app import app, db
-from models import Client, Graphic, MainPage, Role, User
+from models import Client, Graphic, MainPage, Role, User, ArtsPage
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
@@ -32,3 +32,4 @@ admin = Admin(app, 'Светлана Покровская', url='/', index_view=
 admin.add_view(AdminView(Client, db.session))
 admin.add_view(AdminView(MainPage, db.session))
 admin.add_view(AdminView(Graphic, db.session))
+admin.add_view(AdminView(ArtsPage, db.session))
