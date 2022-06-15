@@ -5,7 +5,7 @@
     <div class="col-12"><h3 class="text-center">«Неясность»</h3>
       <h4 class="text-center pb-2">143см*80 см., оргалит, масло, 2019 г.</h4></div>
     <div class="container gx-4">
-      {% for disc in bd_fear_disc %}
+      {% for disc in bd_content %}
         {% if disc.description_unclear %}
           <div class="text-muted pt-3 pb-5">
             {{ disc.description_unclear }}
@@ -15,14 +15,9 @@
     </div>
     </div>
     <div class="container-lg">
-      {% if current_user.is_authenticated %}
-        <form method="post" enctype="multipart/form-data">
-          <input class="btn btn-light mb-2" type="file" name="image">
-          <input class="btn btn-light" type="submit" value="Сохранить">
-        </form>
-      {% endif %}
+      {% include 'includes/admin_form.html' %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3 ">
-        {% for foto in bd_fear_disc %}
+        {% for foto in bd_content %}
           {% if foto.image_unclear %}
             <div class="col">
               <img src="static/uploads/{{ foto.image_unclear }}" class="gallery-item" alt="image4">

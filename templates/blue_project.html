@@ -5,31 +5,24 @@
     <div class="col-12 text-center"><h3>«Синее.Свобода»</h3>
       <h4 class="text-center">122*138 см. оргалит, масло, 2014 г.</h4></div>
     <div class="container gx-4">
-      <div class="text-muted pt-3 pb-5">
-        Полотно сделано под впечатлением от просмотра картины «Три цвета.
-        Синий» К. Кесьлевского о том, как женщина,
-        потеряв мужа и дочь
-        в автокатастрофе, переживает эту потерю. Кино
-        о постепенном принятии ситуации и через это возвращении к жизни.
-        Фильм стал толчком для
-        переосмысления своей жизни в тот момент.
-        Через живопись, через этот синий цвет, будто и я сама освободилась
-        от прошлого и старого во мне. Интересно, что
-        в фильме именно синий
-        взят как цвет «освобождения».
-      </div>
+      {% for disc in bd_content %}
+        {% if disc.description_blue %}
+          <div class="text-muted pt-3 pb-5">
+            {{ disc.description_blue }}
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="container-lg">
+      {% include 'includes/admin_form.html' %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img50.jpg') }}" class="gallery-item" alt="image4">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img25.jpg') }}" class="gallery-item" alt="image5">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img54.jpg') }}" class="gallery-item" alt="image6">
-        </div>
+        {% for foto in bd_content %}
+          {% if foto.image_blue %}
+            <div class="col">
+              <img src="static/uploads/{{ foto.image_blue }}" class="gallery-item" alt="image4">
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </section>

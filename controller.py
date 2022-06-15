@@ -8,7 +8,7 @@ import mail_sender
 import models
 from app import app, db
 from person_data import TELEGRAM, VK, WHATS_UP
-from utils import img_handler
+from utils import img_handler, all_db_data_for_arts, post_handler_for_arts
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
@@ -59,28 +59,27 @@ def ceramics():
 @app.route('/unclear', methods=['GET', 'POST'])
 def unclear_project():
     """Route to one of the painting page. Only GET."""
-    bd_fear_disc = models.ArtsPage.query.all()
-    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
     if request.method == 'POST':
-        try:
-            check_img = request.files['image'].filename != '' and request.files['image'].filename != last_img.image_unclear
-        except AttributeError:
-            check_img = True
-        if check_img:
-            fear_img = models.ArtsPage(image_unclear=img_handler())
-            db.session.add(fear_img)
+        if post_handler_for_arts():
+            unclear_img = models.ArtsPage(image_unclear=img_handler())
+            db.session.add(unclear_img)
             db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_fear_disc=bd_fear_disc)
+                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
 
 
-@app.route('/blue', methods=['GET'])
+@app.route('/blue', methods=['GET', 'POST'])
 def blue_project():
     """Route to one of the painting page. Only GET."""
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            blue_img = models.ArtsPage(image_blue=img_handler())
+            db.session.add(blue_img)
+            db.session.commit()
     return render_template('blue_project.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
 
 
 @app.route('/spring', methods=['GET'])
@@ -94,20 +93,14 @@ def spring():
 @app.route('/fear', methods=['GET', 'POST'])
 def fear():
     """Route to one of the painting page. Only GET."""
-    bd_fear_disc = models.ArtsPage.query.all()
-    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
     if request.method == 'POST':
-        try:
-            check_img = request.files['image'].filename != '' and request.files['image'].filename != last_img.image_fear
-        except AttributeError:
-            check_img = True
-        if check_img:
+        if post_handler_for_arts():
             fear_img = models.ArtsPage(image_fear=img_handler())
             db.session.add(fear_img)
             db.session.commit()
     return render_template('fear.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_fear_disc=bd_fear_disc)
+                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
 
 
 @app.route('/graphic_page', methods=['GET', 'POST'])

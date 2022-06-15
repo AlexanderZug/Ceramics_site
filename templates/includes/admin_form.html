@@ -1,0 +1,6 @@
+{% if current_user.is_authenticated %}
+  <form method="post" enctype="multipart/form-data">
+    <input class="btn btn-light mb-2" type="file" name="image">
+    <input class="btn btn-light" type="submit" value="Сохранить">
+  </form>
+{% endif %}
