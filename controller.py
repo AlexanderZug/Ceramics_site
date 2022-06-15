@@ -56,12 +56,23 @@ def ceramics():
                            vk_page=VK)
 
 
-@app.route('/unclear', methods=['GET'])
+@app.route('/unclear', methods=['GET', 'POST'])
 def unclear_project():
     """Route to one of the painting page. Only GET."""
+    bd_fear_disc = models.ArtsPage.query.all()
+    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
+    if request.method == 'POST':
+        try:
+            check_img = request.files['image'].filename != '' and request.files['image'].filename != last_img.image_unclear
+        except AttributeError:
+            check_img = True
+        if check_img:
+            fear_img = models.ArtsPage(image_unclear=img_handler())
+            db.session.add(fear_img)
+            db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK, bd_fear_disc=bd_fear_disc)
 
 
 @app.route('/blue', methods=['GET'])

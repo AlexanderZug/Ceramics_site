@@ -5,30 +5,30 @@
     <div class="col-12"><h3 class="text-center">«Неясность»</h3>
       <h4 class="text-center pb-2">143см*80 см., оргалит, масло, 2019 г.</h4></div>
     <div class="container gx-4">
-      <div class="text-muted pt-3 pb-5">
-        Состояние неясности можно сравнить с тем, когда попал в сильный
-        туман: стоишь и ничего не видно,
-        все белесое. Из разных мест могут
-        доноситься звуки, но непонятно
-        откуда точно они. Хорошо, если появится свет, на который можно выйти. Но пока ты в тумане, ты будто
-        обездвижен. Цветовая гамма картины немного тусклая, туманная.
-        Есть более темное пятно в центре,
-        а все остальные цвета и оттенки
-        близки по тону, все перемешиваются, превращаясь в кашу,
-        в неясность.
-      </div>
+      {% for disc in bd_fear_disc %}
+        {% if disc.description_unclear %}
+          <div class="text-muted pt-3 pb-5">
+            {{ disc.description_unclear }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
     </div>
     <div class="container-lg">
+      {% if current_user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data">
+          <input class="btn btn-light mb-2" type="file" name="image">
+          <input class="btn btn-light" type="submit" value="Сохранить">
+        </form>
+      {% endif %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3 ">
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img23.jpg') }}" class="gallery-item" alt="image1">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img26.jpg') }}" class="gallery-item" alt="image2">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img24.jpg') }}" class="gallery-item" alt="image3">
-        </div>
+        {% for foto in bd_fear_disc %}
+          {% if foto.image_unclear %}
+            <div class="col">
+              <img src="static/uploads/{{ foto.image_unclear }}" class="gallery-item" alt="image4">
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </section>
