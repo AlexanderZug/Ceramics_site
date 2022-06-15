@@ -8,8 +8,8 @@ from app import app
 
 
 def all_db_data_for_arts():
-    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
     bd_disc = models.ArtsPage.query.all()
+    last_img = models.ArtsPage.query.order_by(models.ArtsPage.id.desc()).first()
     return bd_disc, last_img
 
 
@@ -23,8 +23,8 @@ def img_handler():
 
 def post_handler_for_arts():
     try:
-        check_img = request.files['image'].filename != '' and request.files['image'].filename != all_db_data_for_arts()[
-            1].image_fear
+        check_img = request.files['image'].filename != '' and request.files[
+            'image'].filename != all_db_data_for_arts()[1].image_fear
     except AttributeError:
         check_img = True
     return check_img

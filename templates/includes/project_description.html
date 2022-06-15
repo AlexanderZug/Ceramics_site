@@ -1,0 +1,21 @@
+{% for disc in bd_content %}
+  {% if blue %}
+    {% if disc.description_blue %}
+      <div class="text-muted pt-3 pb-5">
+        {{ disc.description_blue }}
+      </div>
+    {% endif %}
+  {% elif unclear %}
+    {% if disc.description_unclear %}
+      <div class="text-muted pt-3 pb-5">
+        {{ disc.description_unclear }}
+      </div>
+    {% endif %}
+  {% else %}
+    {% if disc.description_fear %}
+      <div class="text-muted pt-3 pb-5">
+        {{ disc.description_fear }}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}

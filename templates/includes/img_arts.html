@@ -1,0 +1,21 @@
+{% for foto in bd_content %}
+  {% if blue %}
+    {% if foto.image_blue %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_blue }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% elif unclear %}
+    {% if foto.image_unclear %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_unclear }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% else %}
+    {% if foto.image_fear %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_fear }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}

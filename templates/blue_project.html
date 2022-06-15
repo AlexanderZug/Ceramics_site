@@ -5,24 +5,12 @@
     <div class="col-12 text-center"><h3>«Синее.Свобода»</h3>
       <h4 class="text-center">122*138 см. оргалит, масло, 2014 г.</h4></div>
     <div class="container gx-4">
-      {% for disc in bd_content %}
-        {% if disc.description_blue %}
-          <div class="text-muted pt-3 pb-5">
-            {{ disc.description_blue }}
-          </div>
-        {% endif %}
-      {% endfor %}
+      {% include 'includes/project_description.html' %}
     </div>
     <div class="container-lg">
       {% include 'includes/admin_form.html' %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-        {% for foto in bd_content %}
-          {% if foto.image_blue %}
-            <div class="col">
-              <img src="static/uploads/{{ foto.image_blue }}" class="gallery-item" alt="image4">
-            </div>
-          {% endif %}
-        {% endfor %}
+        {% include 'includes/img_arts.html' %}
       </div>
     </div>
   </section>

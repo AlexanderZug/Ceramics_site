@@ -66,7 +66,8 @@ def unclear_project():
             db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
+                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
+                           unclear='unclear')
 
 
 @app.route('/blue', methods=['GET', 'POST'])
@@ -79,7 +80,8 @@ def blue_project():
             db.session.commit()
     return render_template('blue_project.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
+                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
+                           blue='blue')
 
 
 @app.route('/spring', methods=['GET'])
