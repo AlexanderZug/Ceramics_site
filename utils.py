@@ -8,8 +8,9 @@ from app import app
 
 
 def all_db_data_for_arts():
-    bd_disc = models.ArtsPage.query.all()
-    return bd_disc
+    bd_content_arts = models.ArtsPage.query.all()
+    bd_content_ceramic = models.CeramicPage.query.all()
+    return bd_content_arts, bd_content_ceramic
 
 
 def img_handler():
