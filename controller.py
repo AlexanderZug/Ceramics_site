@@ -1,14 +1,14 @@
-import os
 import re
 
 from flask import flash, redirect, render_template, request
-from werkzeug.utils import secure_filename
+
 
 import mail_sender
 import models
 from app import app, db
 from person_data import TELEGRAM, VK, WHATS_UP
 from utils import img_handler, all_db_data_for_arts, post_handler_for_arts
+
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
@@ -66,7 +66,7 @@ def unclear_project():
             db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
+                           vk_page=VK, bd_content=all_db_data_for_arts(),
                            unclear='unclear')
 
 
@@ -80,7 +80,7 @@ def blue_project():
             db.session.commit()
     return render_template('blue_project.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
+                           vk_page=VK, bd_content=all_db_data_for_arts(),
                            blue='blue')
 
 
@@ -102,7 +102,7 @@ def fear():
             db.session.commit()
     return render_template('fear.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
+                           vk_page=VK, bd_content=all_db_data_for_arts())
 
 
 @app.route('/graphic_page', methods=['GET', 'POST'])
