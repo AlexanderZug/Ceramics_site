@@ -84,14 +84,6 @@ def blue_project():
                            blue='blue')
 
 
-@app.route('/spring', methods=['GET'])
-def spring():
-    """Route to one of the painting page. Only GET."""
-    return render_template('spring_project.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK)
-
-
 @app.route('/fear', methods=['GET', 'POST'])
 def fear():
     """Route to one of the painting page. Only GET."""
