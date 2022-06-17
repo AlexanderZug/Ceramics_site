@@ -1,5 +1,6 @@
 # Ceramics_business_website
-Website with author's works on ceramics, contains photos of works and projects, as well as the possibility of feedback and content changing.
+The site for the artist and ceramist contains photos of projects and their description (as well as the possibility of feedback). 
+You can use this code to create your own site as a template.
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
