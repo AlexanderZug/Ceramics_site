@@ -2,13 +2,11 @@ import re
 
 from flask import flash, redirect, render_template, request
 
-
 import mail_sender
 import models
 from app import app, db
 from person_data import TELEGRAM, VK, WHATS_UP
-from utils import img_handler, all_db_data_for_arts, post_handler_for_arts
-
+from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
@@ -35,15 +33,19 @@ def index():
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
             return redirect('/')
-    return render_template('index.html', bio=bio, telegram=TELEGRAM,
+    return render_template('index.html',
+                           bio=bio,
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK
+                           )
 
 
 @app.route('/arts', methods=['GET'])
 def arts():
     """Route to main page of painting. Only GET."""
-    return render_template('arts.html', telegram=TELEGRAM,
+    return render_template('arts.html',
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
                            vk_page=VK)
 
@@ -51,14 +53,20 @@ def arts():
 @app.route('/ceramics', methods=['GET'])
 def ceramics():
     """Route to main page of ceramics. Only GET."""
-    return render_template('ceramics.html', telegram=TELEGRAM,
+    return render_template('ceramics.html',
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK
+                           )
 
 
 @app.route('/unclear', methods=['GET', 'POST'])
 def unclear_project():
-    """Route to one of the painting page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
     if request.method == 'POST':
         if post_handler_for_arts():
             unclear_img = models.ArtsPage(image_unclear=img_handler())
@@ -66,13 +74,19 @@ def unclear_project():
             db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts(),
-                           unclear='unclear')
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0],
+                           unclear='unclear'
+                           )
 
 
 @app.route('/blue', methods=['GET', 'POST'])
 def blue_project():
-    """Route to one of the painting page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
     if request.method == 'POST':
         if post_handler_for_arts():
             blue_img = models.ArtsPage(image_blue=img_handler())
@@ -80,21 +94,19 @@ def blue_project():
             db.session.commit()
     return render_template('blue_project.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts(),
-                           blue='blue')
-
-
-@app.route('/spring', methods=['GET'])
-def spring():
-    """Route to one of the painting page. Only GET."""
-    return render_template('spring_project.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0],
+                           blue='blue'
+                           )
 
 
 @app.route('/fear', methods=['GET', 'POST'])
 def fear():
-    """Route to one of the painting page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
     if request.method == 'POST':
         if post_handler_for_arts():
             fear_img = models.ArtsPage(image_fear=img_handler())
@@ -102,7 +114,9 @@ def fear():
             db.session.commit()
     return render_template('fear.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts())
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0]
+                           )
 
 
 @app.route('/graphic_page', methods=['GET', 'POST'])
@@ -124,36 +138,86 @@ def graphic_page():
             db.session.commit()
     return render_template('graphic_page.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_foto_prise=bd_foto_prise)
+                           vk_page=VK,
+                           bd_foto_prise=bd_foto_prise
+                           )
 
 
-@app.route('/self_portrait', methods=['GET'])
+@app.route('/self_portrait', methods=['GET', 'POST'])
 def self_portrait():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            self_portrait_img = models.CeramicPage(image_self_portrait=img_handler())
+            db.session.add(self_portrait_img)
+            db.session.commit()
     return render_template('self_portrait.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           self_portrait='self_portrait'
+                           )
 
 
-@app.route('/isolation', methods=['GET'])
+@app.route('/isolation', methods=['GET', 'POST'])
 def isolation():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            image_isolation_img = models.CeramicPage(image_isolation=img_handler())
+            db.session.add(image_isolation_img)
+            db.session.commit()
     return render_template('isolation.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           isolation='isolation'
+                           )
 
 
-@app.route('/non_intensity', methods=['GET'])
+@app.route('/non_intensity', methods=['GET', 'POST'])
 def non_intensity():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            image_non_intensity = models.CeramicPage(image_non_intensity=img_handler())
+            db.session.add(image_non_intensity)
+            db.session.commit()
     return render_template('non_intensity.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           non_intensity='non_intensity'
+                           )
 
 
-@app.route('/loneliness', methods=['GET'])
+@app.route('/loneliness', methods=['GET', 'POST'])
 def loneliness():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            image_loneliness = models.CeramicPage(image_loneliness=img_handler())
+            db.session.add(image_loneliness)
+            db.session.commit()
     return render_template('loneliness.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           loneliness='loneliness'
+                           )
