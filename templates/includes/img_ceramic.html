@@ -1,0 +1,30 @@
+{% for foto in bd_content %}
+  {% if loneliness %}
+    {% if foto.image_loneliness %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_loneliness }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% endif %}
+  {% if non_intensity %}
+    {% if foto.image_non_intensity %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_non_intensity }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% endif %}
+  {% if isolation %}
+    {% if foto.image_isolation %}
+      <div class="col">
+        <img src="static/uploads/{{ foto.image_isolation }}" class="gallery-item" alt="image4">
+      </div>
+    {% endif %}
+  {% endif %}
+  {% if self_portrait %}
+    {% if foto.image_self_portrait %}
+    <div class="col">
+      <img src="static/uploads/{{ foto.image_self_portrait }}" class="gallery-item" alt="image4">
+    </div>
+      {% endif %}
+  {% endif %}
+{% endfor %}

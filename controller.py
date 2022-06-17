@@ -33,15 +33,19 @@ def index():
             db.session.commit()
             mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
             return redirect('/')
-    return render_template('index.html', bio=bio, telegram=TELEGRAM,
+    return render_template('index.html',
+                           bio=bio,
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK
+                           )
 
 
 @app.route('/arts', methods=['GET'])
 def arts():
     """Route to main page of painting. Only GET."""
-    return render_template('arts.html', telegram=TELEGRAM,
+    return render_template('arts.html',
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
                            vk_page=VK)
 
@@ -49,9 +53,11 @@ def arts():
 @app.route('/ceramics', methods=['GET'])
 def ceramics():
     """Route to main page of ceramics. Only GET."""
-    return render_template('ceramics.html', telegram=TELEGRAM,
+    return render_template('ceramics.html',
+                           telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK
+                           )
 
 
 @app.route('/unclear', methods=['GET', 'POST'])
@@ -68,8 +74,10 @@ def unclear_project():
             db.session.commit()
     return render_template('unclear_priject.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
-                           unclear='unclear')
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0],
+                           unclear='unclear'
+                           )
 
 
 @app.route('/blue', methods=['GET', 'POST'])
@@ -86,8 +94,10 @@ def blue_project():
             db.session.commit()
     return render_template('blue_project.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0],
-                           blue='blue')
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0],
+                           blue='blue'
+                           )
 
 
 @app.route('/fear', methods=['GET', 'POST'])
@@ -104,7 +114,9 @@ def fear():
             db.session.commit()
     return render_template('fear.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_content=all_db_data_for_arts()[0])
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[0]
+                           )
 
 
 @app.route('/graphic_page', methods=['GET', 'POST'])
@@ -126,7 +138,9 @@ def graphic_page():
             db.session.commit()
     return render_template('graphic_page.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK, bd_foto_prise=bd_foto_prise)
+                           vk_page=VK,
+                           bd_foto_prise=bd_foto_prise
+                           )
 
 
 @app.route('/self_portrait', methods=['GET', 'POST'])
@@ -144,12 +158,18 @@ def self_portrait():
     return render_template('self_portrait.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
                            vk_page=VK,
-                           bd_content=all_db_data_for_arts()[1])
+                           bd_content=all_db_data_for_arts()[1],
+                           self_portrait='self_portrait'
+                           )
 
 
 @app.route('/isolation', methods=['GET', 'POST'])
 def isolation():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
     if request.method == 'POST':
         if post_handler_for_arts():
             image_isolation_img = models.CeramicPage(image_isolation=img_handler())
@@ -158,20 +178,46 @@ def isolation():
     return render_template('isolation.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
                            vk_page=VK,
-                           bd_content=all_db_data_for_arts()[1])
+                           bd_content=all_db_data_for_arts()[1],
+                           isolation='isolation'
+                           )
 
 
-@app.route('/non_intensity', methods=['GET'])
+@app.route('/non_intensity', methods=['GET', 'POST'])
 def non_intensity():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            image_non_intensity = models.CeramicPage(image_non_intensity=img_handler())
+            db.session.add(image_non_intensity)
+            db.session.commit()
     return render_template('non_intensity.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           non_intensity='non_intensity'
+                           )
 
 
-@app.route('/loneliness', methods=['GET'])
+@app.route('/loneliness', methods=['GET', 'POST'])
 def loneliness():
-    """Route to one of the projects page. Only GET."""
+    """
+    When GET returns the graphic page.
+    When POST accepts the photo, saves in the download folder;
+    the path to photography is recorded in the DB.
+    """
+    if request.method == 'POST':
+        if post_handler_for_arts():
+            image_loneliness = models.CeramicPage(image_loneliness=img_handler())
+            db.session.add(image_loneliness)
+            db.session.commit()
     return render_template('loneliness.html', telegram=TELEGRAM,
                            whats_up=WHATS_UP,
-                           vk_page=VK)
+                           vk_page=VK,
+                           bd_content=all_db_data_for_arts()[1],
+                           loneliness='loneliness'
+                           )

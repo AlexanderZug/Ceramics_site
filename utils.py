@@ -8,12 +8,14 @@ from app import app
 
 
 def all_db_data_for_arts():
+    """Function gets all query for arts and ceramic from DB."""
     bd_content_arts = models.ArtsPage.query.all()
     bd_content_ceramic = models.CeramicPage.query.all()
     return bd_content_arts, bd_content_ceramic
 
 
 def img_handler():
+    """Function has path to upload directory."""
     filepath = secure_filename(request.files['image'].filename)
     image = request.files['image']
     image.save(os.path.join(app.config['UPLOADS_PATH'],
@@ -22,6 +24,10 @@ def img_handler():
 
 
 def post_handler_for_arts():
+    """
+    Function checks if the foto was uploaded and
+    returns true if the DB is empty to avoid error.
+    """
     try:
         check_img = request.files['image'].filename != ''
     except AttributeError:
