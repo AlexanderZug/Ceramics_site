@@ -26,23 +26,9 @@
       </div>
     </div>
     <div class="container-lg">
+      {% include 'includes/admin_form.html' %}
       <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img06.jpg') }}" class="gallery-item" alt="image4">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img07.jpg') }}" class="gallery-item" alt="image5">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img08.jpg') }}" class="gallery-item" alt="image6">
-        </div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img05.jpg') }}" class="gallery-item" alt="image6">
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <img src="{{ url_for('static', filename='img/img09.jpg') }}" class="gallery-item" alt="image6">
-        </div>
+        {% include 'includes/img_ceramic.html' %}
       </div>
     </div>
   </section>
