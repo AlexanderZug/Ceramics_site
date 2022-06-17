@@ -57,13 +57,15 @@ to create a superuser (your admin) and assign it to the role:
 
 > from app import db
 
-> from admin import user_datastore.create_user(email='test@test.some', password='admin')
+> from admin import user_datastore
+
+> user_datastore.create_user(email='test@test.test', password='admin')
 
 > db.session.commit()
 
-> user = User.query.first()
-
 > from models import Role
+
+> user = User.query.first()
 
 > role = Role.query.first()
 
