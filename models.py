@@ -63,6 +63,8 @@ class Graphic(db.Model):
 
 
 class ArtsPage(db.Model):
+    """Class for edit arts (description, image)."""
+
     id: int = db.Column(db.Integer, primary_key=True)
     description_fear: str = db.Column(db.String(800))
     description_blue: str = db.Column(db.String(800))
@@ -72,4 +74,15 @@ class ArtsPage(db.Model):
     image_unclear: str = db.Column(db.Text, nullable=True)
 
 
+class CeramicPage(db.Model):
+    """Class for edit ceramic (description, image)."""
+
+    id: int = db.Column(db.Integer, primary_key=True)
+    image_isolation: str = db.Column(db.Text, nullable=True)
+    image_loneliness: str = db.Column(db.Text, nullable=True)
+    image_non_intensity: str = db.Column(db.Text, nullable=True)
+    image_self_portrait: str = db.Column(db.Text, nullable=True)
+
+
 db.create_all()
+
