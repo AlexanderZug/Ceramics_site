@@ -16,6 +16,7 @@ email-validator==1.2.1
 filelock==3.6.0
 Flask==2.0.3
 Flask-Admin==1.6.0
+Flask-Babel==2.0.0
 Flask-BabelEx==0.9.4
 Flask-DebugToolbar==0.13.1
 Flask-Login==0.6.1
@@ -24,6 +25,7 @@ Flask-Migrate==3.1.0
 Flask-Moment==1.0.2
 Flask-Principal==0.4.0
 Flask-Security==3.0.0
+Flask-Sessionstore==0.4.5
 Flask-SQLAlchemy==2.5.1
 Flask-Toastr==0.5.7
 Flask-WTF==1.0.1
