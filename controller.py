@@ -4,14 +4,14 @@ from flask import flash, redirect, render_template, request
 
 import mail_sender
 import models
-from app import app, db
+from app import application, db
 from person_data import TELEGRAM, VK, WHATS_UP
 from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
 
-@app.route('/', methods=['POST', 'GET'])
+@application.route('/', methods=['POST', 'GET'])
 def index():
     """
     When GET returns the main page.
@@ -41,7 +41,7 @@ def index():
                            )
 
 
-@app.route('/arts', methods=['GET'])
+@application.route('/arts', methods=['GET'])
 def arts():
     """Route to main page of painting. Only GET."""
     return render_template('arts.html',
@@ -50,7 +50,7 @@ def arts():
                            vk_page=VK)
 
 
-@app.route('/ceramics', methods=['GET'])
+@application.route('/ceramics', methods=['GET'])
 def ceramics():
     """Route to main page of ceramics. Only GET."""
     return render_template('ceramics.html',
@@ -60,7 +60,7 @@ def ceramics():
                            )
 
 
-@app.route('/unclear', methods=['GET', 'POST'])
+@application.route('/unclear', methods=['GET', 'POST'])
 def unclear_project():
     """
     When GET returns the graphic page.
@@ -80,7 +80,7 @@ def unclear_project():
                            )
 
 
-@app.route('/blue', methods=['GET', 'POST'])
+@application.route('/blue', methods=['GET', 'POST'])
 def blue_project():
     """
     When GET returns the graphic page.
@@ -100,7 +100,7 @@ def blue_project():
                            )
 
 
-@app.route('/fear', methods=['GET', 'POST'])
+@application.route('/fear', methods=['GET', 'POST'])
 def fear():
     """
     When GET returns the graphic page.
@@ -119,7 +119,7 @@ def fear():
                            )
 
 
-@app.route('/graphic_page', methods=['GET', 'POST'])
+@application.route('/graphic_page', methods=['GET', 'POST'])
 def graphic_page():
     """
     When GET returns the graphic page.
@@ -143,7 +143,7 @@ def graphic_page():
                            )
 
 
-@app.route('/self_portrait', methods=['GET', 'POST'])
+@application.route('/self_portrait', methods=['GET', 'POST'])
 def self_portrait():
     """
     When GET returns the graphic page.
@@ -163,7 +163,7 @@ def self_portrait():
                            )
 
 
-@app.route('/isolation', methods=['GET', 'POST'])
+@application.route('/isolation', methods=['GET', 'POST'])
 def isolation():
     """
     When GET returns the graphic page.
@@ -183,7 +183,7 @@ def isolation():
                            )
 
 
-@app.route('/non_intensity', methods=['GET', 'POST'])
+@application.route('/non_intensity', methods=['GET', 'POST'])
 def non_intensity():
     """
     When GET returns the graphic page.
@@ -203,7 +203,7 @@ def non_intensity():
                            )
 
 
-@app.route('/loneliness', methods=['GET', 'POST'])
+@application.route('/loneliness', methods=['GET', 'POST'])
 def loneliness():
     """
     When GET returns the graphic page.

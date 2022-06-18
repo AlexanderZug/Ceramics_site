@@ -3,11 +3,11 @@ from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
 
-from app import app, db
+from app import application, db
 from models import ArtsPage, CeramicPage, Client, Graphic, MainPage, Role, User
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, user_datastore)
+security = Security(application, user_datastore)
 
 
 class AdminViewMix:
@@ -28,7 +28,7 @@ class HideAdminPage(AdminViewMix, AdminIndexView):
     pass
 
 
-admin = Admin(app, 'Светлана Покровская', url='/', index_view=HideAdminPage(name='Home'))
+admin = Admin(application, 'Светлана Покровская', url='/', index_view=HideAdminPage(name='Home'))
 admin.add_view(AdminView(Client, db.session))
 admin.add_view(AdminView(MainPage, db.session))
 admin.add_view(AdminView(Graphic, db.session))

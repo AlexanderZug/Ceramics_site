@@ -1,13 +1,13 @@
 from flask import render_template
 
-from app import app
+from app import application
 
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def error404(error):
     return render_template('404.html'), 404
 
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def error500(error):
     return render_template('500.html'), 500
