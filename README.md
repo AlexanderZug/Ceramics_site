@@ -1,4 +1,4 @@
-# Ceramics_business_website
+# Ceramics_site
 The site for the artist and ceramist contains photos of projects and their description (as well as the possibility of feedback). 
 You can use this code to create your own site as a template.
 You can find the website here: http://svetapokrovskaya.ru/
