@@ -1,7 +1,7 @@
 # Ceramics_site
 The site for the artist and ceramist contains photos of projects and their description (as well as the possibility of feedback). 
 You can use this code to create your own site as a template.
-You can find the website here: http://svetapokrovskaya.ru/
+You can find the site here: http://svetapokrovskaya.ru/
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
@@ -11,8 +11,8 @@ You can find the website here: http://svetapokrovskaya.ru/
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-> Install Python(If it's not installed)<br>
-> [Download Python3](https://www.python.org/downloads/)
+> Install Python (if it's not installed), preferably starting with version 3.8<br>
+> [Download Python3](https://www.python.org/downloads/release/python-3910/)
 
 Clone the repository:
 ```
