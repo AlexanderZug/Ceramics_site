@@ -22,3 +22,5 @@ class Config:
     BABEL_DEFAULT_LOCALE: str = 'ru'
     UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/uploads')
     MAX_CONTENT_LENGTH: int = 8 * 1024 * 1024
+    DEBUG: bool = True
+

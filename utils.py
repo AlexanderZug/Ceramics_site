@@ -1,4 +1,5 @@
 import os
+from typing import Any
 
 from flask import request
 from werkzeug.utils import secure_filename
@@ -7,14 +8,14 @@ import models
 from app import application
 
 
-def all_db_data_for_arts():
+def all_db_data_for_arts() -> tuple[Any, Any]:
     """Function gets all query for arts and ceramic from DB."""
     bd_content_arts = models.ArtsPage.query.all()
     bd_content_ceramic = models.CeramicPage.query.all()
     return bd_content_arts, bd_content_ceramic
 
 
-def img_handler():
+def img_handler() -> str:
     """Function has path to upload directory."""
     filepath = secure_filename(request.files['image'].filename)
     image = request.files['image']
@@ -23,7 +24,7 @@ def img_handler():
     return filepath
 
 
-def post_handler_for_arts():
+def post_handler_for_arts() -> bool:
     """
     Function checks if the foto was uploaded and
     returns true if the DB is empty to avoid error.

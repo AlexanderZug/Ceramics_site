@@ -30,8 +30,8 @@ Session(application)
 
 
 if __name__ == '__main__':
-    import admin
-    import controller
+    from admin import *
+    from controller import *
     from errors import *
 
-    application.run(debug=True, host='0.0.0.0', port=5001)
+    application.run(host='0.0.0.0', port=5001)

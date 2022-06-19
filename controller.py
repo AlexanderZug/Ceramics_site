@@ -8,6 +8,7 @@ from app import application, db
 from person_data import TELEGRAM, VK, WHATS_UP
 from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
+# Regular expression that the user introduced an email
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
 
@@ -20,25 +21,26 @@ def index():
     then writes the data to DB and sends an email.
     """
     bio = models.MainPage.query.all()
-    if request.method == 'POST':
-        rec = request.form
-        if len(rec.get('name')) < 2:
-            flash('Your name must be at least 3 characters in length', 'error')
-        elif not re.fullmatch(regex, rec.get('email')):
-            flash("Your e-mail isn't correct.", 'error')
-        else:
-            flash('Your message sent.', 'success')
-            client = models.Client(rec.get('name'), rec.get('email'), rec.get('message'), rec.get('date'))
-            db.session.add(client)
-            db.session.commit()
-            mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
-            return redirect('/')
-    return render_template('index.html',
-                           bio=bio,
-                           telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK
-                           )
+    if request.method == 'GET':
+        return render_template('index.html',
+                               bio=bio,
+                               telegram=TELEGRAM,
+                               whats_up=WHATS_UP,
+                               vk_page=VK
+                               )
+    rec = request.form
+    if len(rec.get('name')) < 2:
+        flash('Your name must be at least 3 characters in length', 'error')
+    elif not re.fullmatch(regex, rec.get('email')):
+        flash("Your e-mail isn't correct.", 'error')
+    else:
+        flash('Your message sent.', 'success')
+        client = models.Client(name=rec.get('name'), email=rec.get('email'), message=rec.get('message'),
+                               date=rec.get('date'))
+        db.session.add(client)
+        db.session.commit()
+        mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
+        return redirect('/')
 
 
 @application.route('/arts', methods=['GET'])
