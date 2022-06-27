@@ -16,12 +16,12 @@ You can find the site here: http://svetapokrovskaya.ru/
 
 Clone the repository:
 ```
-git clone https://github.com/AlexanderZug/Ceramics_business_website.git
+git clone https://github.com/AlexanderZug/Ceramics_site.git
 ```
 
 Go to folder:
 ```
-cd Ceramics_business_website
+cd Ceramics_site
 ```
 
 Install requirements:
@@ -29,7 +29,7 @@ Install requirements:
 pip3 install -r requirements.txt
 ```
 
-Create a file 'person_data.py' and indicate your data:
+Add your information to the file .env_example ():
 
 > TELEGRAM = your data
 > 
