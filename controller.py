@@ -1,13 +1,15 @@
+import os
 import re
 
+from dotenv import load_dotenv
 from flask import flash, redirect, render_template, request
 
 import mail_sender
 import models
 from app import application, db
-from person_data import TELEGRAM, VK, WHATS_UP
 from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
+load_dotenv()
 # Regular expression that the user introduced an email
 regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 
@@ -24,9 +26,9 @@ def index():
     if request.method == 'GET':
         return render_template('index.html',
                                bio=bio,
-                               telegram=TELEGRAM,
-                               whats_up=WHATS_UP,
-                               vk_page=VK
+                               telegram=os.getenv('TELEGRAM'),
+                               whats_up=os.getenv('WHATS_UP'),
+                               vk_page=os.getenv('VK'),
                                )
     rec = request.form
     if len(rec.get('name')) < 2:
@@ -47,18 +49,19 @@ def index():
 def arts():
     """Route to main page of painting. Only GET."""
     return render_template('arts.html',
-                           telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK)
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
+                           )
 
 
 @application.route('/ceramics', methods=['GET'])
 def ceramics():
     """Route to main page of ceramics. Only GET."""
     return render_template('ceramics.html',
-                           telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            )
 
 
@@ -74,9 +77,10 @@ def unclear_project():
             unclear_img = models.ArtsPage(image_unclear=img_handler())
             db.session.add(unclear_img)
             db.session.commit()
-    return render_template('unclear_priject.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('unclear_priject.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[0],
                            unclear='unclear'
                            )
@@ -94,9 +98,10 @@ def blue_project():
             blue_img = models.ArtsPage(image_blue=img_handler())
             db.session.add(blue_img)
             db.session.commit()
-    return render_template('blue_project.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('blue_project.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[0],
                            blue='blue'
                            )
@@ -114,9 +119,10 @@ def fear():
             fear_img = models.ArtsPage(image_fear=img_handler())
             db.session.add(fear_img)
             db.session.commit()
-    return render_template('fear.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('fear.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[0]
                            )
 
@@ -138,9 +144,10 @@ def graphic_page():
             graphic = models.Graphic(image=img_handler())
             db.session.add(graphic)
             db.session.commit()
-    return render_template('graphic_page.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('graphic_page.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_foto_prise=bd_foto_prise
                            )
 
@@ -157,9 +164,10 @@ def self_portrait():
             self_portrait_img = models.CeramicPage(image_self_portrait=img_handler())
             db.session.add(self_portrait_img)
             db.session.commit()
-    return render_template('self_portrait.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('self_portrait.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[1],
                            self_portrait='self_portrait'
                            )
@@ -177,9 +185,10 @@ def isolation():
             image_isolation_img = models.CeramicPage(image_isolation=img_handler())
             db.session.add(image_isolation_img)
             db.session.commit()
-    return render_template('isolation.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('isolation.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[1],
                            isolation='isolation'
                            )
@@ -197,9 +206,10 @@ def non_intensity():
             image_non_intensity = models.CeramicPage(image_non_intensity=img_handler())
             db.session.add(image_non_intensity)
             db.session.commit()
-    return render_template('non_intensity.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('non_intensity.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[1],
                            non_intensity='non_intensity'
                            )
@@ -217,9 +227,10 @@ def loneliness():
             image_loneliness = models.CeramicPage(image_loneliness=img_handler())
             db.session.add(image_loneliness)
             db.session.commit()
-    return render_template('loneliness.html', telegram=TELEGRAM,
-                           whats_up=WHATS_UP,
-                           vk_page=VK,
+    return render_template('loneliness.html',
+                           telegram=os.getenv('TELEGRAM'),
+                           whats_up=os.getenv('WHATS_UP'),
+                           vk_page=os.getenv('VK'),
                            bd_content=all_db_data_for_arts()[1],
                            loneliness='loneliness'
                            )

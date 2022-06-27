@@ -51,6 +51,7 @@ psycopg2-binary==2.9.3
 ptyprocess==0.7.0
 pylev==1.4.0
 pyparsing==3.0.8
+python-dotenv==0.20.0
 pytz==2022.1
 requests==2.27.1
 requests-toolbelt==0.9.1
