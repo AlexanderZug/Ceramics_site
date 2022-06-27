@@ -29,7 +29,7 @@ Install requirements:
 pip3 install -r requirements.txt
 ```
 
-Add your information to the file .env_example ():
+Add your information to the file .env_example:
 
 > TELEGRAM = your data
 > 
