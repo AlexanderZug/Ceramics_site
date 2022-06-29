@@ -167,9 +167,12 @@
                   </div>
                 </div>
                 <div class="row">
-                  {{ form.csrf_token }}
-                  {{ form.recaptcha }}
-                  <div class="col-md-12 form-group pt-2">
+                  <div class="col-md-2 form-group mb-3">
+                    {{ captcha() }}
+                    <input type="text" class="form-control" name="captcha"
+                    placeholder="Введите капчу">
+                  </div>
+                  <div class="col-md-12 form-group">
                     <input type="submit" value="Отправить сообщение"
                            class="btn btn-secondary rounded-0 py-2 px-4">
                     <span class="submitting"></span>

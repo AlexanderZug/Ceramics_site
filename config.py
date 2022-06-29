@@ -25,5 +25,6 @@ class Config:
     UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/uploads')
     MAX_CONTENT_LENGTH: int = 8 * 1024 * 1024
     DEBUG: bool = True
-    RECAPTCHA_PUBLIC_KEY: str = os.getenv('RECAPTCHA_PUBLIC_KEY')
-    RECAPTCHA_PRIVATE_KEY: str = os.getenv('RECAPTCHA_PRIVATE_KEY')
+    CAPTCHA_LENGTH: int = 4
+    CAPTCHA_WIDTH: int = 200
+    CAPTCHA_HEIGHT: int = 45

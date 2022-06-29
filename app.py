@@ -11,7 +11,7 @@ from flask_sessionstore import Session
 from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
-
+from flask_session_captcha import FlaskSessionCaptcha
 from config import Config
 
 load_dotenv()
@@ -31,7 +31,7 @@ toastr = Toastr(application)
 babel = Babel(application)
 application.config['SESSION_SQLALCHEMY'] = db
 Session(application)
-
+captcha = FlaskSessionCaptcha(application)
 
 if __name__ == '__main__':
     from admin import *

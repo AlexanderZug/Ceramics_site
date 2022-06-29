@@ -4,6 +4,7 @@ Babel==2.10.1
 blinker==1.4
 CacheControl==0.12.10
 cachy==0.3.0
+captcha==0.4
 certifi==2021.10.8
 charset-normalizer==2.0.12
 cleo==0.8.1
@@ -25,6 +26,7 @@ Flask-Migrate==3.1.0
 Flask-Moment==1.0.2
 Flask-Principal==0.4.0
 Flask-Security==3.0.0
+flask-session-captcha==1.3.0
 Flask-Sessionstore==0.4.5
 Flask-SQLAlchemy==2.5.1
 Flask-Toastr==0.5.7
@@ -45,6 +47,7 @@ packaging==20.9
 passlib==1.7.4
 pastel==0.2.1
 pexpect==4.8.0
+Pillow==9.1.1
 pkginfo==1.8.2
 platformdirs==2.5.1
 psycopg2-binary==2.9.3
