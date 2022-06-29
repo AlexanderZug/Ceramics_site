@@ -1,5 +1,7 @@
-import sentry_sdk
 import os
+
+import sentry_sdk
+from dotenv import load_dotenv
 from flask import Flask
 from flask_babelex import Babel
 from flask_mail import Mail
@@ -11,7 +13,6 @@ from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 from config import Config
-from dotenv import load_dotenv
 
 load_dotenv()
 

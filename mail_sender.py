@@ -2,10 +2,10 @@ import os
 from dataclasses import dataclass
 from typing import ClassVar
 
+from dotenv import load_dotenv
 from flask_mail import Message
 
 import app
-from dotenv import load_dotenv
 
 load_dotenv()
 
