@@ -7,11 +7,12 @@ from flask_babelex import Babel
 from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_moment import Moment
+from flask_session_captcha import FlaskSessionCaptcha
 from flask_sessionstore import Session
 from flask_sqlalchemy import SQLAlchemy
 from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
-from flask_session_captcha import FlaskSessionCaptcha
+
 from config import Config
 
 load_dotenv()

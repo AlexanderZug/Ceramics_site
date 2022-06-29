@@ -6,7 +6,7 @@ from flask import flash, redirect, render_template, request
 
 import mail_sender
 import models
-from app import application, db, captcha
+from app import application, captcha, db
 from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
 load_dotenv()
