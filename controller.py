@@ -7,6 +7,7 @@ from flask import flash, redirect, render_template, request
 import mail_sender
 import models
 from app import application, db
+from forms import ContactForm
 from utils import all_db_data_for_arts, img_handler, post_handler_for_arts
 
 load_dotenv()
@@ -22,6 +23,7 @@ def index():
     if the validation passes,
     then writes the data to DB and sends an email.
     """
+    form = ContactForm()
     bio = models.MainPage.query.all()
     if request.method == 'GET':
         return render_template('index.html',
@@ -29,20 +31,24 @@ def index():
                                telegram=os.getenv('TELEGRAM'),
                                whats_up=os.getenv('WHATS_UP'),
                                vk_page=os.getenv('VK'),
+                               form=form,
                                )
     rec = request.form
-    if len(rec.get('name')) < 2:
-        flash('Your name must be at least 3 characters in length', 'error')
-    elif not re.fullmatch(regex, rec.get('email')):
-        flash("Your e-mail isn't correct.", 'error')
-    else:
-        flash('Your message sent.', 'success')
-        client = models.Client(name=rec.get('name'), email=rec.get('email'), message=rec.get('message'),
-                               date=rec.get('date'))
-        db.session.add(client)
-        db.session.commit()
-        mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
-        return redirect('/')
+    if form.validate_on_submit():
+        if len(rec.get('name')) < 2:
+            flash('Your name must be at least 3 characters in length', 'error')
+        elif not re.fullmatch(regex, rec.get('email')):
+            flash("Your e-mail isn't correct.", 'error')
+        else:
+            flash('Your message sent.', 'success')
+            client = models.Client(name=rec.get('name'), email=rec.get('email'), message=rec.get('message'),
+                                   date=rec.get('date'))
+            db.session.add(client)
+            db.session.commit()
+            mail_sender.Mail(rec.get('name'), rec.get('email'), rec.get('message')).send_message()
+            return redirect('/')
+    flash('Captcha incorrect.', 'error')
+    return redirect('/')
 
 
 @application.route('/arts', methods=['GET'])
