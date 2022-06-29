@@ -1,4 +1,5 @@
 import sentry_sdk
+import os
 from flask import Flask
 from flask_babelex import Babel
 from flask_mail import Mail
@@ -10,11 +11,13 @@ from flask_toastr import Toastr
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 from config import Config
-from person_data import SENTRY
+from dotenv import load_dotenv
+
+load_dotenv()
 
 application = Flask(__name__)
 sentry_sdk.init(
-    dsn=SENTRY,
+    dsn=os.getenv('SENTRY'),
     integrations=[FlaskIntegration()],
     traces_sample_rate=1.0
 )
