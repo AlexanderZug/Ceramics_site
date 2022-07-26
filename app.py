@@ -21,7 +21,7 @@ application = Flask(__name__)
 sentry_sdk.init(
     dsn=os.getenv('SENTRY'),
     integrations=[FlaskIntegration()],
-    traces_sample_rate=1.0
+    traces_sample_rate=1.0,
 )
 application.config.from_object(Config)
 db = SQLAlchemy(application)

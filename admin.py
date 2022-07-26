@@ -28,7 +28,12 @@ class HideAdminPage(AdminViewMix, AdminIndexView):
     pass
 
 
-admin = Admin(application, 'Светлана Покровская', url='/', index_view=HideAdminPage(name='Home'))
+admin = Admin(
+    application,
+    'Светлана Покровская',
+    url='/',
+    index_view=HideAdminPage(name='Home'),
+)
 admin.add_view(AdminView(Client, db.session))
 admin.add_view(AdminView(MainPage, db.session))
 admin.add_view(AdminView(Graphic, db.session))

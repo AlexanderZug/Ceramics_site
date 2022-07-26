@@ -7,6 +7,7 @@ from app import db
 
 class IdModel(db.Model):
     """Class for creating abstract model with id-field."""
+
     __abstract__ = True
 
     id: int = db.Column(db.Integer, primary_key=True)
@@ -21,10 +22,11 @@ class Client(IdModel):
     date: str = db.Column(db.DateTime, default=datetime.utcnow)
 
 
-roles_users = db.Table('roles_users',
-                       db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
-                       db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
-                       )
+roles_users = db.Table(
+    'roles_users',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('role.id')),
+)
 
 
 class User(IdModel, UserMixin):
@@ -33,7 +35,11 @@ class User(IdModel, UserMixin):
     email: str = db.Column(db.String(40))
     password: str = db.Column(db.String(40))
     active: bool = db.Column(db.Boolean)
-    roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
+    roles = db.relationship(
+        'Role',
+        secondary=roles_users,
+        backref=db.backref('users', lazy='dynamic'),
+    )
 
 
 class Role(IdModel, RoleMixin):

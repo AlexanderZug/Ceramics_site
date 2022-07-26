@@ -19,8 +19,11 @@ def img_handler() -> str:
     """Function has path to upload directory."""
     filepath = secure_filename(request.files['image'].filename)
     image = request.files['image']
-    image.save(os.path.join(application.config['UPLOADS_PATH'],
-                            secure_filename(image.filename)))
+    image.save(
+        os.path.join(
+            application.config['UPLOADS_PATH'], secure_filename(image.filename)
+        )
+    )
     return filepath
 
 
