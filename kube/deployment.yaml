@@ -15,3 +15,10 @@ spec:
       containers:
       - name: sweta-web-node
         image: alexzug89/sweta-web
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 3
