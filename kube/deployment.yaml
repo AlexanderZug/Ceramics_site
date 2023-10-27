@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sweta-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sweta-web
+  template:
+    metadata:
+      labels:
+        app: sweta-web
+    spec:
+      containers:
+      - name: sweta-web-node
+        image: alexzug89/sweta-web
