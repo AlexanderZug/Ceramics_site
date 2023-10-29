@@ -23,10 +23,9 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 3
         volumeMounts:
-          - mountPath: /data
+          - mountPath: app/data
             name: sweta-web-volume
       volumes:
         - name: sweta-web-volume
-          hostPath:
-            path: /data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: sweta-web-pvc

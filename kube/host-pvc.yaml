@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sweta-web-pvc
+spec:
+    volumeName: sweta-web-pv
+    accessModes:
+        - ReadWriteOnce
+    resources:
+        requests:
+          storage: 1Gi
+    storageClassName: standard
+  
